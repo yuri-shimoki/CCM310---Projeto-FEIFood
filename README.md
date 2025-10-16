@@ -38,7 +38,7 @@ Implementar, utilizando Java, um aplicativo de interface gráfica, inspirado pel
 - Projeto NetBeans
 - Arquivo .jar executável
 - Javadoc
-- Vídeo de 3 a 5 minutos explicando e executando o projeto
+- Vídeo explicando e executando o projeto
 - Relatório de 3 a 5 páginas documentando o que foi feito (disponibilizar via
 readme no GitHub)
 - GitHub privado com commits frequentes

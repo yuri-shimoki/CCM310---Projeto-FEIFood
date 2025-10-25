@@ -2,7 +2,7 @@ package feifood.controller;
 
 import feifood.model.ApplicationModel;
 
-import feifood.view.JanelaDeLogin;
+import feifood.view.LoginFrame;
 
 /**
  * A classe principal que é responsável por conectar todos os outros módulos
@@ -16,7 +16,7 @@ public class ApplicationController
     
     public ApplicationController()
     {
-        model = new ApplicationModel(new JanelaDeLogin());
+        model = new ApplicationModel(new LoginFrame());
         model.setVisibilidadeDaJanela(true);
     }
 }

@@ -25,7 +25,6 @@ public class AlimentoInfoFrame extends javax.swing.JFrame {
     private void initComponents() {
 
         BackgroundPanel = new javax.swing.JPanel();
-        AlimentoIcon = new javax.swing.JLabel();
         NomeDoAlimentoLabel = new javax.swing.JLabel();
         TipoDoAlimentoLabel = new javax.swing.JLabel();
         VoltarButton = new javax.swing.JButton();
@@ -47,8 +46,7 @@ public class AlimentoInfoFrame extends javax.swing.JFrame {
                         .addComponent(VoltarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(BackgroundPanelLayout.createSequentialGroup()
-                        .addComponent(AlimentoIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                        .addGap(218, 218, 218)
                         .addGroup(BackgroundPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(NomeDoAlimentoLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 239, Short.MAX_VALUE)
                             .addComponent(TipoDoAlimentoLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
@@ -58,13 +56,10 @@ public class AlimentoInfoFrame extends javax.swing.JFrame {
             BackgroundPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(BackgroundPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(BackgroundPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(AlimentoIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(BackgroundPanelLayout.createSequentialGroup()
-                        .addComponent(NomeDoAlimentoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(TipoDoAlimentoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 213, Short.MAX_VALUE)
+                .addComponent(NomeDoAlimentoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(TipoDoAlimentoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 309, Short.MAX_VALUE)
                 .addComponent(VoltarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -109,20 +104,11 @@ public class AlimentoInfoFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel AlimentoIcon;
     private javax.swing.JPanel BackgroundPanel;
     private javax.swing.JLabel NomeDoAlimentoLabel;
     private javax.swing.JLabel TipoDoAlimentoLabel;
     private javax.swing.JButton VoltarButton;
     // End of variables declaration//GEN-END:variables
-
-    public JLabel getAlimentoIcon() {
-        return AlimentoIcon;
-    }
-
-    public void setAlimentoIcon(JLabel AlimentoIcon) {
-        this.AlimentoIcon = AlimentoIcon;
-    }
 
     public JPanel getBackgroundPanel() {
         return BackgroundPanel;

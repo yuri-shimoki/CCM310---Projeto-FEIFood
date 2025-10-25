@@ -9,6 +9,7 @@ public class Pedido
 {
     private Usuario usuario;
     private List<Alimento> alimentos;
+    private List<Integer> quantidades;
 
     public Pedido(Usuario usuario, List<Alimento> alimentos) {
         this.usuario = usuario;
@@ -29,5 +30,13 @@ public class Pedido
 
     public void setAlimentos(List<Alimento> alimentos) {
         this.alimentos = alimentos;
+    }
+    
+    public List<Integer> getQuantidades() {
+        return quantidades;
+    }
+
+    public void setQuantidades(List<Integer> quantidades) {
+        this.quantidades = quantidades;
     }
 }

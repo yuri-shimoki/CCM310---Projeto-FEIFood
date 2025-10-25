@@ -1,13 +1,11 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package feifood.view;
 
-/**
- *
- * @author zeros
- */
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JSeparator;
+import javax.swing.JTextField;
+
 public class CadastroFrame extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(CadastroFrame.class.getName());
@@ -28,7 +26,7 @@ public class CadastroFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        BackgroundPanel = new javax.swing.JPanel();
         VoltarButton = new javax.swing.JButton();
         FEIFoodIcon = new javax.swing.JLabel();
         Separator = new javax.swing.JSeparator();
@@ -38,13 +36,11 @@ public class CadastroFrame extends javax.swing.JFrame {
         SenhaLabel = new javax.swing.JLabel();
         SenhaTextField = new javax.swing.JTextField();
         CriarContaButton = new javax.swing.JButton();
-        UsuarioLabel = new javax.swing.JLabel();
-        UsuarioTextField = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(489, 437));
 
-        jPanel1.setBackground(new java.awt.Color(211, 237, 255));
+        BackgroundPanel.setBackground(new java.awt.Color(211, 237, 255));
 
         VoltarButton.setText("Voltar");
         VoltarButton.addActionListener(new java.awt.event.ActionListener() {
@@ -81,89 +77,74 @@ public class CadastroFrame extends javax.swing.JFrame {
             }
         });
 
-        UsuarioLabel.setText("Usuário:");
-
-        UsuarioTextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                UsuarioTextFieldActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout BackgroundPanelLayout = new javax.swing.GroupLayout(BackgroundPanel);
+        BackgroundPanel.setLayout(BackgroundPanelLayout);
+        BackgroundPanelLayout.setHorizontalGroup(
+            BackgroundPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(BackgroundPanelLayout.createSequentialGroup()
+                .addGroup(BackgroundPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, BackgroundPanelLayout.createSequentialGroup()
                         .addGap(108, 108, 108)
                         .addComponent(NomeLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(NomeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(103, 103, 103)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(UsuarioLabel)
-                            .addComponent(SenhaLabel))
+                    .addGroup(BackgroundPanelLayout.createSequentialGroup()
+                        .addGap(111, 111, 111)
+                        .addComponent(SenhaLabel)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(BackgroundPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(SenhaTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(UsuarioTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGroup(BackgroundPanelLayout.createSequentialGroup()
                                 .addComponent(VoltarButton)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(CriarContaButton)))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BackgroundPanelLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGroup(BackgroundPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BackgroundPanelLayout.createSequentialGroup()
                         .addComponent(CriarContaLabel)
                         .addGap(220, 220, 220))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BackgroundPanelLayout.createSequentialGroup()
                         .addComponent(Separator, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(112, 112, 112))))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BackgroundPanelLayout.createSequentialGroup()
                 .addGap(0, 60, Short.MAX_VALUE)
                 .addComponent(FEIFoodIcon)
                 .addGap(39, 39, 39))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        BackgroundPanelLayout.setVerticalGroup(
+            BackgroundPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(BackgroundPanelLayout.createSequentialGroup()
                 .addComponent(FEIFoodIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(Separator, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(CriarContaLabel)
                 .addGap(31, 31, 31)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(BackgroundPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(NomeLabel)
                     .addComponent(NomeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(UsuarioTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(UsuarioLabel))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(BackgroundPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(SenhaTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(SenhaLabel))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(BackgroundPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(VoltarButton)
                     .addComponent(CriarContaButton))
-                .addGap(0, 63, Short.MAX_VALUE))
+                .addGap(0, 103, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(BackgroundPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(BackgroundPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -185,9 +166,85 @@ public class CadastroFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_CriarContaButtonActionPerformed
 
-    private void UsuarioTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsuarioTextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_UsuarioTextFieldActionPerformed
+    public JButton getCriarContaButton() {
+        return CriarContaButton;
+    }
+
+    public void setCriarContaButton(JButton CriarContaButton) {
+        this.CriarContaButton = CriarContaButton;
+    }
+
+    public JLabel getCriarContaLabel() {
+        return CriarContaLabel;
+    }
+
+    public void setCriarContaLabel(JLabel CriarContaLabel) {
+        this.CriarContaLabel = CriarContaLabel;
+    }
+
+    public JLabel getFEIFoodIcon() {
+        return FEIFoodIcon;
+    }
+
+    public void setFEIFoodIcon(JLabel FEIFoodIcon) {
+        this.FEIFoodIcon = FEIFoodIcon;
+    }
+
+    public JLabel getNomeLabel() {
+        return NomeLabel;
+    }
+
+    public void setNomeLabel(JLabel NomeLabel) {
+        this.NomeLabel = NomeLabel;
+    }
+
+    public JTextField getNomeTextField() {
+        return NomeTextField;
+    }
+
+    public void setNomeTextField(JTextField NomeTextField) {
+        this.NomeTextField = NomeTextField;
+    }
+
+    public JLabel getSenhaLabel() {
+        return SenhaLabel;
+    }
+
+    public void setSenhaLabel(JLabel SenhaLabel) {
+        this.SenhaLabel = SenhaLabel;
+    }
+
+    public JTextField getSenhaTextField() {
+        return SenhaTextField;
+    }
+
+    public void setSenhaTextField(JTextField SenhaTextField) {
+        this.SenhaTextField = SenhaTextField;
+    }
+
+    public JSeparator getSeparator() {
+        return Separator;
+    }
+
+    public void setSeparator(JSeparator Separator) {
+        this.Separator = Separator;
+    }
+
+    public JButton getVoltarButton() {
+        return VoltarButton;
+    }
+
+    public void setVoltarButton(JButton VoltarButton) {
+        this.VoltarButton = VoltarButton;
+    }
+
+    public JPanel getBackgroundPanel() {
+        return BackgroundPanel;
+    }
+
+    public void setBackgroundPanel(JPanel BackgroundPanel) {
+        this.BackgroundPanel = BackgroundPanel;
+    }
 
     /**
      * @param args the command line arguments
@@ -215,6 +272,7 @@ public class CadastroFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel BackgroundPanel;
     private javax.swing.JButton CriarContaButton;
     private javax.swing.JLabel CriarContaLabel;
     private javax.swing.JLabel FEIFoodIcon;
@@ -223,9 +281,6 @@ public class CadastroFrame extends javax.swing.JFrame {
     private javax.swing.JLabel SenhaLabel;
     private javax.swing.JTextField SenhaTextField;
     private javax.swing.JSeparator Separator;
-    private javax.swing.JLabel UsuarioLabel;
-    private javax.swing.JTextField UsuarioTextField;
     private javax.swing.JButton VoltarButton;
-    private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

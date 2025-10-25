@@ -29,9 +29,9 @@
                   <Component id="AlimentosScrollPane" alignment="1" max="32767" attributes="0"/>
                   <Component id="CriarPedidoButton" alignment="1" pref="664" max="32767" attributes="0"/>
                   <Group type="102" alignment="0" attributes="0">
-                      <Component id="BuscarAlimentoTextField" max="32767" attributes="0"/>
+                      <Component id="BuscarTextField" max="32767" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                      <Component id="BuscarButton" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
@@ -43,8 +43,8 @@
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace pref="7" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="BuscarAlimentoTextField" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="BuscarTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="BuscarButton" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="AlimentosScrollPane" min="-2" pref="370" max="-2" attributes="0"/>
@@ -89,9 +89,9 @@
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
     </Container>
-    <Component class="javax.swing.JTextField" name="BuscarAlimentoTextField">
+    <Component class="javax.swing.JTextField" name="BuscarTextField">
     </Component>
-    <Component class="javax.swing.JButton" name="jButton1">
+    <Component class="javax.swing.JButton" name="BuscarButton">
       <Properties>
         <Property name="text" type="java.lang.String" value="Buscar"/>
       </Properties>

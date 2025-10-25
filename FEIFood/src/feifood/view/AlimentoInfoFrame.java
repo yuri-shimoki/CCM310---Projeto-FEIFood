@@ -1,13 +1,9 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package feifood.view;
 
-/**
- *
- * @author zeros
- */
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
 public class AlimentoInfoFrame extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(AlimentoInfoFrame.class.getName());
@@ -119,4 +115,44 @@ public class AlimentoInfoFrame extends javax.swing.JFrame {
     private javax.swing.JLabel TipoDoAlimentoLabel;
     private javax.swing.JButton VoltarButton;
     // End of variables declaration//GEN-END:variables
+
+    public JLabel getAlimentoIcon() {
+        return AlimentoIcon;
+    }
+
+    public void setAlimentoIcon(JLabel AlimentoIcon) {
+        this.AlimentoIcon = AlimentoIcon;
+    }
+
+    public JPanel getBackgroundPanel() {
+        return BackgroundPanel;
+    }
+
+    public void setBackgroundPanel(JPanel BackgroundPanel) {
+        this.BackgroundPanel = BackgroundPanel;
+    }
+
+    public JLabel getNomeDoAlimentoLabel() {
+        return NomeDoAlimentoLabel;
+    }
+
+    public void setNomeDoAlimentoLabel(JLabel NomeDoAlimentoLabel) {
+        this.NomeDoAlimentoLabel = NomeDoAlimentoLabel;
+    }
+
+    public JLabel getTipoDoAlimentoLabel() {
+        return TipoDoAlimentoLabel;
+    }
+
+    public void setTipoDoAlimentoLabel(JLabel TipoDoAlimentoLabel) {
+        this.TipoDoAlimentoLabel = TipoDoAlimentoLabel;
+    }
+
+    public JButton getVoltarButton() {
+        return VoltarButton;
+    }
+
+    public void setVoltarButton(JButton VoltarButton) {
+        this.VoltarButton = VoltarButton;
+    }
 }

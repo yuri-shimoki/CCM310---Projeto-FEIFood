@@ -1,13 +1,9 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package feifood.view;
 
-/**
- *
- * @author zeros
- */
+import javax.swing.JButton;
+import javax.swing.JScrollPane;
+import javax.swing.JTextField;
+
 public class MenuPrincipalFrame extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(MenuPrincipalFrame.class.getName());
@@ -30,8 +26,8 @@ public class MenuPrincipalFrame extends javax.swing.JFrame {
 
         CriarPedidoButton = new javax.swing.JButton();
         AlimentosScrollPane = new javax.swing.JScrollPane();
-        BuscarAlimentoTextField = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        BuscarTextField = new javax.swing.JTextField();
+        BuscarButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -48,7 +44,7 @@ public class MenuPrincipalFrame extends javax.swing.JFrame {
 
         AlimentosScrollPane.setBackground(new java.awt.Color(211, 237, 255));
 
-        jButton1.setText("Buscar");
+        BuscarButton.setText("Buscar");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -60,9 +56,9 @@ public class MenuPrincipalFrame extends javax.swing.JFrame {
                     .addComponent(AlimentosScrollPane, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(CriarPedidoButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 664, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(BuscarAlimentoTextField)
+                        .addComponent(BuscarTextField)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton1)))
+                        .addComponent(BuscarButton)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -70,8 +66,8 @@ public class MenuPrincipalFrame extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(7, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(BuscarAlimentoTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1))
+                    .addComponent(BuscarTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BuscarButton))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(AlimentosScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -113,8 +109,40 @@ public class MenuPrincipalFrame extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JScrollPane AlimentosScrollPane;
-    private javax.swing.JTextField BuscarAlimentoTextField;
+    private javax.swing.JButton BuscarButton;
+    private javax.swing.JTextField BuscarTextField;
     private javax.swing.JButton CriarPedidoButton;
-    private javax.swing.JButton jButton1;
     // End of variables declaration//GEN-END:variables
+
+    public JScrollPane getAlimentosScrollPane() {
+        return AlimentosScrollPane;
+    }
+
+    public void setAlimentosScrollPane(JScrollPane AlimentosScrollPane) {
+        this.AlimentosScrollPane = AlimentosScrollPane;
+    }
+
+    public JButton getBuscarButton() {
+        return BuscarButton;
+    }
+
+    public void setBuscarButton(JButton BuscarButton) {
+        this.BuscarButton = BuscarButton;
+    }
+
+    public JTextField getBuscarTextField() {
+        return BuscarTextField;
+    }
+
+    public void setBuscarTextField(JTextField BuscarTextField) {
+        this.BuscarTextField = BuscarTextField;
+    }
+
+    public JButton getCriarPedidoButton() {
+        return CriarPedidoButton;
+    }
+
+    public void setCriarPedidoButton(JButton CriarPedidoButton) {
+        this.CriarPedidoButton = CriarPedidoButton;
+    }
 }

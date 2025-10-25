@@ -1,7 +1,5 @@
 package feifood.dao;
 
-import feifood.dao.Conexao;
-
 import java.sql.SQLException;
 import java.sql.ResultSet;
 import java.sql.PreparedStatement;

@@ -45,7 +45,7 @@ public class LoginFrame extends javax.swing.JFrame {
 
         FEIFoodIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/feifood/view/FEI logo.png"))); // NOI18N
 
-        TelaDeLoginLabel.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        TelaDeLoginLabel.setFont(new java.awt.Font("Verdana", 0, 24)); // NOI18N
         TelaDeLoginLabel.setText("Tela de Login");
 
         NomeLabel.setText("Nome:");
@@ -88,9 +88,6 @@ public class LoginFrame extends javax.swing.JFrame {
                         .addGap(35, 35, 35)
                         .addComponent(FEIFoodIcon))
                     .addGroup(BackgroundPanelLayout.createSequentialGroup()
-                        .addGap(198, 198, 198)
-                        .addComponent(TelaDeLoginLabel))
-                    .addGroup(BackgroundPanelLayout.createSequentialGroup()
                         .addGap(100, 100, 100)
                         .addGroup(BackgroundPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(Separator, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -105,7 +102,10 @@ public class LoginFrame extends javax.swing.JFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(EntrarButton))
                                     .addComponent(SenhaTextField)
-                                    .addComponent(NomeTextField))))))
+                                    .addComponent(NomeTextField)))))
+                    .addGroup(BackgroundPanelLayout.createSequentialGroup()
+                        .addGap(161, 161, 161)
+                        .addComponent(TelaDeLoginLabel)))
                 .addContainerGap(43, Short.MAX_VALUE))
         );
         BackgroundPanelLayout.setVerticalGroup(
@@ -114,9 +114,9 @@ public class LoginFrame extends javax.swing.JFrame {
                 .addComponent(FEIFoodIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(Separator, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addComponent(TelaDeLoginLabel)
-                .addGap(31, 31, 31)
+                .addGap(18, 18, 18)
                 .addGroup(BackgroundPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(NomeLabel)
                     .addComponent(NomeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -128,7 +128,7 @@ public class LoginFrame extends javax.swing.JFrame {
                 .addGroup(BackgroundPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(CriarContaButton)
                     .addComponent(EntrarButton))
-                .addContainerGap(126, Short.MAX_VALUE))
+                .addContainerGap(113, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

@@ -14,7 +14,8 @@ public class LoginController
         telaDeLogin = new LoginFrame();
         
         telaDeLogin.getCriarContaButton().addActionListener(e -> {
-                
+                var cadastroController = new CadastroController();
+                telaDeLogin.dispose();
         });
         
         telaDeLogin.getEntrarButton().addActionListener(e -> {

@@ -14,6 +14,13 @@ public class UsuarioDao
 {   
     private UsuarioDao() {}
     
+    /**
+     * Realiza uma consulta SELECT aos usuários no banco de dados.
+     * 
+     * @param usuario o usuario a ser consultado.
+     * @return o resultado da consulta ao banco de dados.
+     * @throws SQLException 
+     */
     public static ResultSet consultar(Usuario usuario) throws SQLException
     {
         Connection conexao = Conexao.getConexao();
@@ -33,6 +40,12 @@ public class UsuarioDao
         return resultado;
     }
     
+    /**
+     * Salva o <code>usuario</code> no banco de dados.
+     * 
+     * @param usuario o usuario a ser inserido.
+     * @throws SQLException 
+     */
     public static void inserir(Usuario usuario) throws SQLException
     {
         Connection conexao = Conexao.getConexao();

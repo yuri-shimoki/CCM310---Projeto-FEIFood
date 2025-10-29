@@ -11,32 +11,39 @@ public class Pedido
     private List<Alimento> alimentos;
     private List<Integer> quantidades;
 
-    public Pedido(Usuario usuario, List<Alimento> alimentos) {
+    public Pedido(Usuario usuario, List<Alimento> alimentos)
+    {
         this.usuario = usuario;
         this.alimentos = alimentos;
     }
 
-    public Usuario getUsuario() {
+    public Usuario getUsuario()
+    {
         return usuario;
     }
 
-    public void setUsuario(Usuario usuario) {
+    public void setUsuario(Usuario usuario)
+    {
         this.usuario = usuario;
     }
 
-    public List<Alimento> getAlimentos() {
+    public List<Alimento> getAlimentos()
+    {
         return alimentos;
     }
 
-    public void setAlimentos(List<Alimento> alimentos) {
+    public void setAlimentos(List<Alimento> alimentos)
+    {
         this.alimentos = alimentos;
     }
     
-    public List<Integer> getQuantidades() {
+    public List<Integer> getQuantidades()
+    {
         return quantidades;
     }
 
-    public void setQuantidades(List<Integer> quantidades) {
+    public void setQuantidades(List<Integer> quantidades)
+    {
         this.quantidades = quantidades;
     }
 }

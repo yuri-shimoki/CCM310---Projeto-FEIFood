@@ -15,7 +15,7 @@ public class Usuario
 
     public void setNome(String nome)
     {
-        this.nome = nome;
+        this.nome = nome.strip();
     }
 
     public String getSenha()
@@ -24,7 +24,7 @@ public class Usuario
     }
 
     public void setSenha(String senha)
-    {
-        this.senha = senha;
+    {   
+        this.senha = senha.strip();
     }
 }

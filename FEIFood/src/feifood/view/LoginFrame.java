@@ -36,8 +36,6 @@ public class LoginFrame extends javax.swing.JFrame {
         EntrarButton = new javax.swing.JButton();
         CriarContaButton = new javax.swing.JButton();
 
-        ErroOptionPane.setMessage("Erro: nome ou senha estão incorretos.");
-
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("FEIFood - Login");
 

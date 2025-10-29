@@ -22,6 +22,12 @@ public class Comida extends Alimento
 
     public void setPeso(double peso)
     {
+        if (peso < 0)
+        {
+            throw new RuntimeException("peso em Comida.setPeso(" + peso + ")"
+                + "não pode ser negativo.");
+        }
+        
         this.peso = peso;
     }
 }

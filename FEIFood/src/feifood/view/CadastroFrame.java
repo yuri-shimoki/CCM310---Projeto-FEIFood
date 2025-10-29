@@ -2,6 +2,7 @@ package feifood.view;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JSeparator;
 import javax.swing.JTextField;
@@ -26,6 +27,7 @@ public class CadastroFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        ErroOptionPane = new javax.swing.JOptionPane();
         BackgroundPanel = new javax.swing.JPanel();
         VoltarButton = new javax.swing.JButton();
         FEIFoodIcon = new javax.swing.JLabel();
@@ -243,6 +245,14 @@ public class CadastroFrame extends javax.swing.JFrame {
         this.BackgroundPanel = BackgroundPanel;
     }
 
+    public JOptionPane getErroOptionPane() {
+        return ErroOptionPane;
+    }
+
+    public void setErroOptionPane(JOptionPane ErroOptionPane){
+        this.ErroOptionPane = ErroOptionPane;
+    }
+
     /**
      * @param args the command line arguments
      */
@@ -272,6 +282,7 @@ public class CadastroFrame extends javax.swing.JFrame {
     private javax.swing.JPanel BackgroundPanel;
     private javax.swing.JButton CriarContaButton;
     private javax.swing.JLabel CriarContaLabel;
+    private javax.swing.JOptionPane ErroOptionPane;
     private javax.swing.JLabel FEIFoodIcon;
     private javax.swing.JLabel NomeLabel;
     private javax.swing.JTextField NomeTextField;

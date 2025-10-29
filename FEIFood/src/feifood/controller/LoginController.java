@@ -13,6 +13,8 @@ public class LoginController
     {
         telaDeLogin = new LoginFrame();
         
+        telaDeLogin.setLocationRelativeTo(null);
+        
         telaDeLogin.getCriarContaButton().addActionListener(e -> {
                 var cadastroController = new CadastroController();
                 telaDeLogin.dispose();

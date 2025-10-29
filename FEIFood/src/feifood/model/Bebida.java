@@ -23,6 +23,12 @@ public class Bebida extends Alimento // implements Imposto_Alcool
 
     public void setLitros(double litros)
     {
+        if (litros < 0)
+        {
+            throw new RuntimeException("litros em Comida.setPeso("+ litros +")"
+                + "não pode ser negativo.");
+        }
+        
         this.litros = litros;
     }
 }

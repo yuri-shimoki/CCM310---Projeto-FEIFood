@@ -24,7 +24,6 @@ public class LoginFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        ErroOptionPane = new javax.swing.JOptionPane();
         BackgroundPanel = new javax.swing.JPanel();
         FEIFoodIcon = new javax.swing.JLabel();
         Separator = new javax.swing.JSeparator();
@@ -205,14 +204,6 @@ public class LoginFrame extends javax.swing.JFrame {
         this.EntrarButton = EntrarButton;
     }
 
-    public JOptionPane getErroOptionPane() {
-        return ErroOptionPane;
-    }
-
-    public void setErroOptionPane(JOptionPane ErroOptionPane) {
-        this.ErroOptionPane = ErroOptionPane;
-    }
-
     public JLabel getFEIFoodIcon() {
         return FEIFoodIcon;
     }
@@ -273,7 +264,6 @@ public class LoginFrame extends javax.swing.JFrame {
     private javax.swing.JPanel BackgroundPanel;
     private javax.swing.JButton CriarContaButton;
     private javax.swing.JButton EntrarButton;
-    private javax.swing.JOptionPane ErroOptionPane;
     private javax.swing.JLabel FEIFoodIcon;
     private javax.swing.JLabel NomeLabel;
     private javax.swing.JTextField NomeTextField;

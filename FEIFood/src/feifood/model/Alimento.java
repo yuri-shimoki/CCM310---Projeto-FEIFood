@@ -44,7 +44,13 @@ public abstract class Alimento
     }
 
     public void setValor(BigDecimal valor)
-    {
+    {   
+        if (valor.compareTo(BigDecimal.ZERO) < 0)
+        {
+            throw new RuntimeException("valor em Alimento.setValor("+ valor +")"
+                + "não pode ser negativo.");
+        }
+        
         this.valor = valor;
     }
 

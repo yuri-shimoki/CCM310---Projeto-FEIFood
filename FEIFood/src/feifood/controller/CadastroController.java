@@ -2,6 +2,10 @@ package feifood.controller;
 
 import feifood.view.CadastroFrame;
 import feifood.controller.LoginController;
+import feifood.dao.UsuarioDao;
+import feifood.model.Usuario;
+import java.sql.SQLException;
+import java.sql.ResultSet;
 
 import javax.swing.JOptionPane;
 
@@ -54,7 +58,22 @@ public class CadastroController
              * omiti-la.
              */
             
-            
+            try
+            {
+                UsuarioDao.inserir(new Usuario(nome, senha));
+                
+                JOptionPane.showMessageDialog(telaDeCadastro,
+                    "O usuário foi cadastrado com sucesso.",
+                    "Sucesso",
+                    JOptionPane.INFORMATION_MESSAGE);
+            }
+            catch (SQLException e2)
+            {
+                JOptionPane.showMessageDialog(telaDeCadastro,
+                    "Um erro ocorreu ao cadastrar o usuário no banco de dados.",
+                    "Erro",
+                    JOptionPane.ERROR_MESSAGE);
+            }
         });
         
         telaDeCadastro.setVisible(true);

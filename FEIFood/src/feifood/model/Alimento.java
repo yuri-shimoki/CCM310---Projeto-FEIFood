@@ -8,9 +8,10 @@ import java.math.BigDecimal;
  */
 public abstract class Alimento
 {
-    // valor representado via BigDecimal para evitar erros de precisão.
+    private int id;
     private String nome;
-    private BigDecimal valor;
+    private BigDecimal valor; // valor representado via BigDecimal para evitar
+                              // erros de precisão.
     private Tipo tipo;
     
     public Alimento(String nome, BigDecimal valor, Tipo tipo)
@@ -28,6 +29,14 @@ public abstract class Alimento
         BEBIDA, COMIDA,
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+    
     public String getNome()
     {
         return nome;

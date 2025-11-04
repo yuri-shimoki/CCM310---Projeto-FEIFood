@@ -10,10 +10,5 @@ import java.sql.Connection;
  */
 public class PedidoDao
 {
-    private Connection connection;
     
-    public PedidoDao()
-    {
-        
-    }
 }

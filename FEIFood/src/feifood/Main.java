@@ -1,11 +1,11 @@
 package feifood;
 
-import feifood.controller.ApplicationController;
+import feifood.controller.AplicacaoController;
 
 public class Main
 {
     public static void main(String[] args)
     {
-        var aplicacao = new ApplicationController();
+        var aplicacao = new AplicacaoController();
     }
 }

@@ -48,6 +48,16 @@ public class LoginController
                 return;
             }
             
+            if (nome.length() == 0 || senha.length() == 0)
+            {
+                JOptionPane.showMessageDialog(telaDeLogin,
+                    "Nem o nome, nem a senha podem ser vazios.",
+                    "Erro",
+                    JOptionPane.ERROR_MESSAGE);
+                
+                return;
+            }
+            
             /* [ATENÇÃO]: Em uma aplicação real, seria necessário verificar se
              * se a entrada não constitui um código SQL afim de evitar ataques
              * de injeção de SQL. Estou considerando que este tipo de
@@ -79,7 +89,8 @@ public class LoginController
             catch (SQLException e2)
             {
                 JOptionPane.showMessageDialog(telaDeLogin,
-                    "Um erro ocorreu ao consultar o banco de dados.",
+                    "Ocorreu um erro ao consultar o banco de dados:\n"
+                        + e2.getMessage(),
                     "Erro",
                     JOptionPane.ERROR_MESSAGE);
             }

@@ -7,6 +7,7 @@ import java.util.List;
  */
 public class Pedido
 {
+    private int id;
     private Usuario usuario;
     private List<Alimento> alimentos;
     private List<Integer> quantidades;
@@ -17,6 +18,16 @@ public class Pedido
         this.alimentos = alimentos;
     }
 
+    public int getId()
+    {
+        return id;
+    }
+
+    public void setId(int id)
+    {
+        this.id = id;
+    }
+    
     public Usuario getUsuario()
     {
         return usuario;

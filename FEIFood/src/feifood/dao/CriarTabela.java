@@ -78,7 +78,7 @@ public class CriarTabela
                     "id serial primary key",
                     "nome varchar(30) not null",
                     "valor numeric(10, 2) not null",
-                    "tipo varchar(25) not null"
+                    "tipo integer not null"
         );
     }
     

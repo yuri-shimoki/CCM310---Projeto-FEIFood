@@ -26,15 +26,20 @@ public class UsuarioDao
     {
         Connection conexao = Conexao.getConexao();
         
-        String sql = "select * from usuarios where nome = ? and senha = ?;";
+        String sql = """
+                     select
+                        id,
+                        nome,
+                        senha
+                     from usuarios
+                     where nome = ? and senha = ?;
+                     """;
         PreparedStatement statement = conexao.prepareStatement(sql);
         
         statement.setString(1, nome);
         statement.setString(2, senha);
         
-        statement.execute();
-        
-        ResultSet resultado = statement.getResultSet();
+        ResultSet resultado = statement.executeQuery();
                 
         conexao.close();
         

@@ -6,7 +6,7 @@ import java.math.BigDecimal;
  * Classe abstrata que pode ser usada para representar tanto comidas quanto
  * bebidas.
  */
-public abstract class Alimento
+public class Alimento
 {
     private int id;
     private String nome;
@@ -14,11 +14,12 @@ public abstract class Alimento
                               // erros de precisão.
     private Tipo tipo;
     
-    public Alimento(String nome, BigDecimal valor, Tipo tipo)
+    public Alimento(int id, String nome, BigDecimal valor, int tipoCodigo)
     {
+        this.id = id;
         this.nome = nome;
         this.valor = valor;
-        this.tipo = tipo;
+        this.tipo = Tipo.codigoParaTipo(tipoCodigo);
     }
     
     /**
@@ -26,7 +27,29 @@ public abstract class Alimento
      */
     public enum Tipo
     {
-        BEBIDA, COMIDA,
+        BEBIDA(0), COMIDA(1);
+        
+        private final int codigo;
+        
+        Tipo(int codigo)
+        {
+            this.codigo = codigo;
+        }
+        
+        public int getCodigo()
+        {
+            return codigo;
+        }
+        
+        public static Tipo codigoParaTipo(int codigo) {
+            for (Tipo tipo : values())
+            {
+                if (tipo.codigo == codigo)
+                    return tipo;
+            }
+            
+            throw new IllegalArgumentException("Código desconhecido: " + codigo);
+        }
     }
 
     public int getId() {

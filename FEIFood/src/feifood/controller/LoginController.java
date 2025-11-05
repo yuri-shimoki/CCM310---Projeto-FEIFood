@@ -64,14 +64,11 @@ public class LoginController
              * verificação está fora do escopo do projeto. Portanto, irei
              * omiti-la.
              */
-            
             try
             {
-                var resultado = UsuarioDao.consultar(new Usuario(nome, senha));
+                var resultado = UsuarioDao.consultarPorNomeESenha(nome, senha);
                 
-                resultado.next();
-                if (resultado.getString("nome").equals(nome) &&
-                    resultado.getString("senha").equals(senha))
+                if (resultado != null)
                 {
                     var menuPrincipal = new MenuPrincipalController();
                     telaDeLogin.dispose();

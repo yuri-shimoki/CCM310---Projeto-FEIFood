@@ -4,7 +4,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.ResultSet;
-import javax.swing.JOptionPane;
 
 /**
  * Classe que permite verificar a existência das tabelas no banco de dados.
@@ -23,14 +22,11 @@ public class VerificarBancoDeDados
         Connection conexao = Conexao.getConexao();
         
         PreparedStatement statement = conexao.prepareStatement(
-            "select exists (" +
-                "select 1 from information_schema.tables" +
-                "where table_schema = ? and table_name = ?" +
-            ")"
+            "select exists (select 1 from pg_catalog.pg_tables where "
+                + "schemaname = 'public' and tablename = ?);"
         );
-        
-        statement.setString(1, "public");
-        statement.setString(2, nome);
+    
+        statement.setString(1, nome);
 
         ResultSet resultado = statement.executeQuery();
         

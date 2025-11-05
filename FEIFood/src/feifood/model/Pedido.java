@@ -12,8 +12,9 @@ public class Pedido
     private List<Alimento> alimentos;
     private List<Integer> quantidades;
 
-    public Pedido(Usuario usuario, List<Alimento> alimentos)
+    public Pedido(int id, Usuario usuario, List<Alimento> alimentos)
     {
+        this.id = id;
         this.usuario = usuario;
         this.alimentos = alimentos;
     }

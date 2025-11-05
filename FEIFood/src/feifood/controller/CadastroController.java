@@ -70,7 +70,7 @@ public class CadastroController
             
             try
             {
-                UsuarioDao.inserir(new Usuario(nome, senha));
+                UsuarioDao.inserir(nome, senha);
                 
                 JOptionPane.showMessageDialog(telaDeCadastro,
                     "O usuário foi cadastrado com sucesso.",

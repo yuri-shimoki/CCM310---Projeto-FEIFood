@@ -7,7 +7,7 @@ import java.math.BigDecimal;
  */
 public class Comida extends Alimento
 {
-    public Comida(int id, double peso, String nome, BigDecimal valor, int tipoCodigo) 
+    public Comida(Integer id, double peso, String nome, BigDecimal valor, int tipoCodigo) 
     {
         super(id, nome, valor, tipoCodigo);
     }

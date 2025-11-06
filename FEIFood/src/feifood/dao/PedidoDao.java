@@ -18,14 +18,21 @@ public class PedidoDao
 {
     
     /**
-     * Realiza uma consulta SELECT aos pedidos no banco de dados.
+     * Realiza uma consulta por id aos pedidos no banco de dados.
      * 
-     * @param pedido pedido a ser consultado.
-     * @return o resultado da consulta ao banco de dados.
+     * @param pedido pedido a ser consultado. Atributos fora <code>id</code>
+     *      podem ser nulos.
+     * @return o resultado da consulta ao banco de dados. <code>null<code> se
+     *      nenhum resultado for retornado.
      * @throws SQLException 
      */
-    public static Pedido consultar(Pedido pedido) throws SQLException
+    public static Pedido consultarPorId(Pedido pedido) throws SQLException
     {
+        if (pedido.getId() == null)
+        {
+            throw new RuntimeException("consultarPorId(pedido): id é nulo.");
+        }
+        
         Connection conexao = Conexao.getConexao();
         
         String sql = """
@@ -49,13 +56,10 @@ public class PedidoDao
                      """;
         
         PreparedStatement statement = conexao.prepareStatement(sql);
-        
         statement.setInt(1, pedido.getId());
-        
         statement.execute();
         
         ResultSet resultado = statement.getResultSet();
-        
         Pedido resultadoPedido = null;
         
         var alimentos = new ArrayList<Alimento>();
@@ -93,7 +97,8 @@ public class PedidoDao
     }
     
     /**
-     * Salva o <code>pedido</code> no banco de dados.
+     * Salva o <code>pedido</code> no banco de dados. O atributo <code>id</code>
+     * pode ser <code>null</code>.
      * 
      * @param pedido o pedido a ser inserido.
      * @throws SQLException 
@@ -117,9 +122,7 @@ public class PedidoDao
                          returning id;
                          """;
             PreparedStatement statement = conexao.prepareStatement(sql);
-
             statement.setInt(1, pedido.getUsuario().getId());
-
             ResultSet resultado = statement.executeQuery();
 
             if (resultado.next())

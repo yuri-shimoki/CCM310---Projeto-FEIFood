@@ -7,8 +7,8 @@ import java.math.BigDecimal;
  */
 public class Bebida extends Alimento // implements Imposto_Alcool
 {
-    public Bebida(int id, String nome, BigDecimal valor, Tipo tipo, double litros)
+    public Bebida(Integer id, String nome, BigDecimal valor, int tipoCodigo, double litros)
     {
-        super(id, nome, valor, tipo);
+        super(id, nome, valor, tipoCodigo);
     }
 }

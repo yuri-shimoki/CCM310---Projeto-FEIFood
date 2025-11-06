@@ -7,24 +7,25 @@ import java.util.List;
  */
 public class Pedido
 {
-    private int id;
+    // Wrapper utilizado para permitir valores nulos
+    private Integer id;
     private Usuario usuario;
     private List<Alimento> alimentos;
     private List<Integer> quantidades;
 
-    public Pedido(int id, Usuario usuario, List<Alimento> alimentos, List<Integer> quantidades)
+    public Pedido(Integer id, Usuario usuario, List<Alimento> alimentos, List<Integer> quantidades)
     {
         this.id = id;
         this.usuario = usuario;
         this.alimentos = alimentos;
     }
 
-    public int getId()
+    public Integer getId()
     {
         return id;
     }
 
-    public void setId(int id)
+    public void setId(Integer id)
     {
         this.id = id;
     }

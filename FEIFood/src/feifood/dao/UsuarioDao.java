@@ -13,17 +13,24 @@ import java.sql.Connection;
 public class UsuarioDao
 {   
     /**
-     * Realiza uma consulta SELECT nos usuários no banco de dados via
-     * nome e senha.
+     * Realiza uma consulta SELECT nos usuários no banco de dados com base no
+     * <code>nome</code> e <code>senha</code> do usuário.
      * 
-     * @param nome o nome do usuário a ser consultado.
-     * @param senha a senha do usuário a ser consultado.
-     * @return o resultado da consulta ao banco de dados.
+     * @param usuario o usuário a ser consultado. O atributo <code>id</code>
+     *      pode ser nulo.
+     * @return o resultado da consulta ao banco de dados. <code>null</code> se
+     *      a consultar não tiver resultados.
      * @throws SQLException 
      */
-    public static Usuario consultarPorNomeESenha(String nome, String senha)
+    public static Usuario consultarPorNomeESenha(Usuario usuario)
         throws SQLException
     {
+        if (usuario.getNome() == null || usuario.getSenha() == null)
+        {
+            throw new RuntimeException("consultarPorNomeESenha(usuario): nome ou"
+                + "senha são nulos.");
+        }
+        
         Connection conexao = Conexao.getConexao();
         
         String sql = """
@@ -36,8 +43,8 @@ public class UsuarioDao
                      """;
         PreparedStatement statement = conexao.prepareStatement(sql);
         
-        statement.setString(1, nome);
-        statement.setString(2, senha);
+        statement.setString(1, usuario.getNome());
+        statement.setString(2, usuario.getSenha());
         
         ResultSet resultado = statement.executeQuery();
         
@@ -62,17 +69,38 @@ public class UsuarioDao
      * @param usuario o usuario a ser inserido.
      * @throws SQLException 
      */
-    public static void inserir(String nome, String senha) throws SQLException
+    public static void inserir(Usuario usuario) throws SQLException
     {
+        if (usuario.getNome() == null || usuario.getSenha() == null)
+        {
+            throw new RuntimeException("inserir(): nome ou"
+                + "senha são nulos.");
+        }
+        
         Connection conexao = Conexao.getConexao();
         
-        String sql = "insert into usuarios(nome, senha) values (?, ?);";
+        String sql = """
+                     insert into usuarios(nome, senha)
+                     values (?, ?)
+                     returning id;
+                     """;
+        
         PreparedStatement statement = conexao.prepareStatement(sql);
+        statement.setString(1, usuario.getNome());
+        statement.setString(2, usuario.getSenha());
         
-        statement.setString(1, nome);
-        statement.setString(2, senha);
+        ResultSet resultado = statement.executeQuery();
         
-        statement.execute();
+        if (resultado.next())
+        {
+            usuario.setId(resultado.getInt(1));
+        }
+        else
+        {
+            conexao.close();
+            throw new SQLException("O id não foi gerado corretamente ao "
+                + "inserir o usuário no banco de dados.");
+        }
                 
         conexao.close();
     }

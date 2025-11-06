@@ -5,22 +5,23 @@ package feifood.model;
  */
 public class Usuario
 {
-    private int id;
+    // Wrapper utilizado para permitir valores nulos
+    private Integer id;
     private String nome;
     private String senha;
     
-    public Usuario(int id, String nome, String senha)
+    public Usuario(Integer id, String nome, String senha)
     {
         this.id = id;
         this.nome = nome;
         this.senha = senha;
     }
     
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
     

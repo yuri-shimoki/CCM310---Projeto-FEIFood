@@ -60,7 +60,9 @@ public class LoginController
             
             try
             {
-                var resultado = UsuarioDao.consultarPorNomeESenha(nome, senha);
+                var resultado = UsuarioDao.consultarPorNomeESenha(
+                    new Usuario(null, nome, senha)
+                );
                 
                 if (resultado != null)
                 {

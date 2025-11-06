@@ -8,13 +8,14 @@ import java.math.BigDecimal;
  */
 public class Alimento
 {
-    private int id;
+    // Wrapper utilizado para permitir valores nulos
+    private Integer id;
     private String nome;
     private BigDecimal valor; // valor representado via BigDecimal para evitar
                               // erros de precisão.
     private Tipo tipo;
     
-    public Alimento(int id, String nome, BigDecimal valor, int tipoCodigo)
+    public Alimento(Integer id, String nome, BigDecimal valor, int tipoCodigo)
     {
         this.id = id;
         this.nome = nome;
@@ -27,7 +28,7 @@ public class Alimento
      */
     public enum Tipo
     {
-        BEBIDA(0), COMIDA(1);
+        BEBIDA(0), BEBIDA_ALCOOLICA(1), COMIDA(2);
         
         private final int codigo;
         
@@ -52,11 +53,11 @@ public class Alimento
         }
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
     

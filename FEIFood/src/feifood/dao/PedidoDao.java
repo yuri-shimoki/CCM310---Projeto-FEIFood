@@ -60,20 +60,19 @@ public class PedidoDao
         statement.execute();
         
         ResultSet resultado = statement.getResultSet();
-        Pedido resultadoPedido = null;
+        Pedido resultadoPedido = new Pedido(null, null, null, null);
         
         var alimentos = new ArrayList<Alimento>();
         var quantidadesAlimentos = new ArrayList<Integer>();
         
         if (resultado.next())
         {
-            resultadoPedido = new Pedido(resultado.getInt("pedido_id"),
-                                         new Usuario(resultado.getInt("usuario_id"),
-                                                     resultado.getString("nome_usuario"),
-                                                     ""),
-                                         null,
-                                         null
-            );
+            resultadoPedido.setId(resultado.getInt("pedido_id"));
+            
+            resultadoPedido.setUsuario(new Usuario(resultado.getInt("usuario_id"),
+                                                   resultado.getString("nome_usuario"),
+                                                   null
+            ));
             
             do 
             {
@@ -89,6 +88,10 @@ public class PedidoDao
             
             resultadoPedido.setAlimentos(new ArrayList<Alimento>(alimentos));
             resultadoPedido.setQuantidades(new ArrayList<Integer>(quantidadesAlimentos));
+        }
+        else
+        {
+            resultadoPedido = null;
         }
         
         conexao.close();

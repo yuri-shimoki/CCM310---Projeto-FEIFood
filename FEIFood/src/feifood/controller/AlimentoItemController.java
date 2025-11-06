@@ -32,6 +32,8 @@ public class AlimentoItemController
             modelo.incrementarQuantidade();
             
             painel.getMinusButton().setEnabled(true);
+            
+            painel.getQuantidadeValorLabel().setText(Integer.toString(modelo.getQuantidade()));
         });
         
         painel.getMinusButton().addActionListener(e -> {
@@ -42,6 +44,8 @@ public class AlimentoItemController
                 
                 modelo.decrementarQuantidade();
             }
+            
+            painel.getQuantidadeValorLabel().setText(Integer.toString(modelo.getQuantidade()));
         });
     }
     

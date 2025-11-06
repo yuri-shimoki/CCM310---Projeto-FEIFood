@@ -93,15 +93,23 @@ public class AlimentoDao
         
         resultado.next();
         
-        ArrayList<Alimento> alimentos = null;
+        var alimentos = new ArrayList<Alimento>();
         
-        while (resultado.next())
+        if (resultado.next())
         {
-            alimentos.add(new Alimento(resultado.getInt("id"),
-                                       resultado.getString("nome"),
-                                       resultado.getBigDecimal("valor"),
-                                       resultado.getInt("tipo")
-            ));
+            do
+            {
+                alimentos.add(new Alimento(resultado.getInt("id"),
+                                           resultado.getString("nome"),
+                                           resultado.getBigDecimal("valor"),
+                                           resultado.getInt("tipo")
+                ));
+            }
+            while (resultado.next());
+        }
+        else
+        {
+            alimentos = null;
         }
         
         conexao.close();

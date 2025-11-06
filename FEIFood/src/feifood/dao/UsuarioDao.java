@@ -48,14 +48,17 @@ public class UsuarioDao
         
         ResultSet resultado = statement.executeQuery();
         
-        Usuario usuarioRequisitado = null;
+        Usuario usuarioRequisitado = new Usuario(null, null, null);
         
         if (resultado.next())
         {
-            usuarioRequisitado = new Usuario(resultado.getInt("id"),
-                                             resultado.getString("nome"),
-                                             resultado.getString("senha")
-            );
+            usuarioRequisitado.setId(resultado.getInt("id"));
+            usuarioRequisitado.setNome(resultado.getString("nome"));
+            usuarioRequisitado.setSenha(resultado.getString("senha"));
+        }
+        else
+        {
+            usuarioRequisitado = null;
         }
         
         conexao.close();

@@ -14,13 +14,14 @@ public class AplicacaoController
     {
         try
         {
+            
             CriarTabela.criarTabelasSeNaoExistirem();
         }
         catch (SQLException e)
         {
             JOptionPane.showMessageDialog(null,
-                "Um erro ocorreu ao verificar a existência do " +
-                    "banco de dados:\n" + e.getMessage(),
+                "Ocorreu um erro ao inicializar o programa:\n"
+                    + e.getMessage(),
                 "Erro",
                 JOptionPane.ERROR_MESSAGE);
         }

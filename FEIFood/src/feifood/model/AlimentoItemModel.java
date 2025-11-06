@@ -7,11 +7,17 @@ public class AlimentoItemModel
 {
     private int quantidade;
 
+    /**
+     * Incrementa a <code>quantidade</code> de um alimento.
+     */
     public void incrementarQuantidade()
     {
         ++quantidade;
     }
     
+    /**
+     * Decrementa a <code>quantidade</code> de um alimento.
+     */
     public void decrementarQuantidade()
     {
         --quantidade;

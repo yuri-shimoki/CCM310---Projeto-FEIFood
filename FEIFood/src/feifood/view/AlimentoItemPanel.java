@@ -12,8 +12,6 @@ import javax.swing.JLabel;
  * @author zeros
  */
 public class AlimentoItemPanel extends javax.swing.JPanel {
-
-    private int quantidade;
     
     /**
      * Creates new form AlimentoItemPanel

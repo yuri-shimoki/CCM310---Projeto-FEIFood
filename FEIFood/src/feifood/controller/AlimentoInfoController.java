@@ -5,6 +5,7 @@ import feifood.dao.AlimentoDao;
 import feifood.model.Alimento;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
+import javax.swing.WindowConstants;
 
 /**
  *
@@ -13,29 +14,15 @@ public class AlimentoInfoController
 {
     private AlimentoInfoFrame telaDeAlimento;
     
-    public AlimentoInfoController(String nome)
+    public AlimentoInfoController(Alimento alimento)
     {
         telaDeAlimento = new AlimentoInfoFrame();
+        telaDeAlimento.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         telaDeAlimento.setLocationRelativeTo(null);
         
-        try
-        {
-            var resultado = AlimentoDao.consultarPorNome(
-                new Alimento(null, nome, null, -1)
-            );
-            
-            telaDeAlimento.getNomeText().setText(resultado.getNome());
-            telaDeAlimento.getValorText().setText(resultado.getValor().toString());
-            telaDeAlimento.getTipoText().setText(resultado.getTipo().toString());
-        }
-        catch (SQLException e)
-        {
-            JOptionPane.showMessageDialog(telaDeAlimento,
-                    "Ocorreu um erro ao consultar os dados do alimento no "
-                        + "banco de dados:\n" + e.getMessage(),
-                    "Erro",
-                    JOptionPane.ERROR_MESSAGE);
-        }
+        telaDeAlimento.getNomeText().setText(alimento.getNome());
+        telaDeAlimento.getValorText().setText(alimento.getValor().toString());
+        telaDeAlimento.getTipoText().setText(alimento.getTipo().toString());
         
         telaDeAlimento.getVoltarButton().addActionListener(e -> {
             var menuPrincipal = new MenuPrincipalController();

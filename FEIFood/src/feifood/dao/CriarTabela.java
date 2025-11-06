@@ -1,7 +1,9 @@
 package feifood.dao;
 
+import feifood.model.Alimento;
+import java.math.BigDecimal;
 import java.sql.Connection;
-import java.sql.PreparedStatement;
+import java.sql.Statement;
 import java.sql.SQLException;
 
 /**
@@ -23,7 +25,7 @@ public class CriarTabela
     {
         Connection conexao = Conexao.getConexao();
         
-        String sql = "create table " + nome + "(";
+        String sql = "create table if not exists " + nome + "(";
         
         for (int i = 0; i < colunas.length - 1; ++i)
         {
@@ -32,9 +34,8 @@ public class CriarTabela
         
         sql += colunas[colunas.length - 1] + ");";
         
-        PreparedStatement statement = conexao.prepareStatement(sql);
-        
-        statement.execute();
+        Statement statement = conexao.createStatement();
+        statement.execute(sql);
                 
         conexao.close();
     }
@@ -67,7 +68,8 @@ public class CriarTabela
     }
     
     /**
-     * Cria a tabela de alimentos no banco de dados.
+     * Cria a tabela de alimentos no banco de dados. Preenche-a com alguns
+     * alimentos caso esteja vazia para efeitos de demonstração.
      * 
      * @throws SQLException 
      */
@@ -79,6 +81,58 @@ public class CriarTabela
                     "valor numeric(10, 2) not null",
                     "tipo integer not null"
         );
+        
+        // Preenche a tabela com alguns elementos padrões se ela estiver vazia
+        if (VerificarTabela.verificarSeTabelaEstaVazia("alimentos"))
+        {
+            AlimentoDao.inserir(new Alimento(null,
+                                             "Batatas Fritas",
+                                             new BigDecimal("5.99"),
+                                             Alimento.Tipo.COMIDA.getCodigo()
+            ));
+            
+            AlimentoDao.inserir(new Alimento(null,
+                                             "Refrigerante Coca-cola 2L",
+                                             new BigDecimal("15.99"),
+                                             Alimento.Tipo.BEBIDA.getCodigo()
+            ));
+            
+            AlimentoDao.inserir(new Alimento(null,
+                                             "Cerveja Heineken",
+                                             new BigDecimal("4.80"),
+                                             Alimento.Tipo.BEBIDA_ALCOOLICA.getCodigo()
+            ));
+            
+            AlimentoDao.inserir(new Alimento(null,
+                                             "Suco de Laranja 1,5L",
+                                             new BigDecimal("16.50"),
+                                             Alimento.Tipo.BEBIDA.getCodigo()
+            ));
+            
+            AlimentoDao.inserir(new Alimento(null,
+                                             "Nuggets de Frango",
+                                             new BigDecimal("7.80"),
+                                             Alimento.Tipo.COMIDA.getCodigo()
+            ));
+            
+            AlimentoDao.inserir(new Alimento(null,
+                                             "Sorvete Kibon 500mL",
+                                             new BigDecimal("11.99"),
+                                             Alimento.Tipo.COMIDA.getCodigo()
+            ));
+            
+            AlimentoDao.inserir(new Alimento(null,
+                                             "Uísque Johnnie Walker 1L",
+                                             new BigDecimal("54.99"),
+                                             Alimento.Tipo.BEBIDA_ALCOOLICA.getCodigo()
+            ));
+            
+            AlimentoDao.inserir(new Alimento(null,
+                                             "Pizza de Calabresa",
+                                             new BigDecimal("25.00"),
+                                             Alimento.Tipo.COMIDA.getCodigo()
+            ));
+        }
     }
     
     /**
@@ -105,24 +159,9 @@ public class CriarTabela
      */
     public static void criarTabelasSeNaoExistirem() throws SQLException
     {
-        if (!VerificarBancoDeDados.verificarTabelaUsuariosExiste())
-        {
-            criarTabelaUsuarios();
-        }
-
-        if (!VerificarBancoDeDados.verificarTabelaAlimentosExiste())
-        {
-            criarTabelaAlimentos();
-        }
-        
-        if (!VerificarBancoDeDados.verificarTabelaPedidosExiste())
-        {
-            criarTabelaPedidos();
-        }
-        
-        if (!VerificarBancoDeDados.verificarTabelaPedidoAlimentoExiste())
-        {
-            criarTabelaPedidoAlimento();
-        }
+        criarTabelaUsuarios();
+        criarTabelaAlimentos();
+        criarTabelaPedidos();
+        criarTabelaPedidoAlimento();   
     }
 }

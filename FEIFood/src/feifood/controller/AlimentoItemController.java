@@ -3,6 +3,8 @@ package feifood.controller;
 import feifood.model.Alimento;
 import feifood.model.AlimentoItemModel;
 import feifood.view.AlimentoItemPanel;
+import java.text.NumberFormat;
+import java.util.Locale;
 
 /**
  * Classe que controla a criação de painéis de alimentos para no menu principal.
@@ -16,6 +18,11 @@ public class AlimentoItemController
     {
         painel = new AlimentoItemPanel();
         modelo = new AlimentoItemModel();
+        
+        painel.getNomeLabel().setText(alimento.getNome());
+        
+        NumberFormat formatoBr = NumberFormat.getCurrencyInstance(new Locale("pt", "BR"));
+        painel.getValorLabel().setText(formatoBr.format(alimento.getValor()));
         
         painel.getDetalhesButton().addActionListener(e -> {
             var detalhesFrame = new AlimentoInfoController(alimento);

@@ -20,11 +20,9 @@
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="NomeLabel" max="32767" attributes="0"/>
-                  <Group type="102" attributes="0">
-                      <Component id="RSLabel" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
                       <Component id="ValorLabel" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="165" max="32767" attributes="0"/>
+                      <EmptySpace pref="185" max="32767" attributes="0"/>
                       <Component id="MinusButton" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="PlusButton" min="-2" max="-2" attributes="0"/>
@@ -47,22 +45,19 @@
               <Component id="NomeLabel" min="-2" pref="25" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="RSLabel" alignment="3" max="32767" attributes="0"/>
-                      <Component id="ValorLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
+                  <Component id="ValorLabel" min="-2" max="-2" attributes="0"/>
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace min="0" pref="5" max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="DetalhesButton" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Group type="103" alignment="3" groupAlignment="3" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                              <Component id="PlusButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="MinusButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="QuantidadeTextoLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="QuantidadeValorLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Group type="103" alignment="3" groupAlignment="3" attributes="0">
-                                  <Component id="PlusButton" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="MinusButton" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
                           </Group>
+                          <Component id="DetalhesButton" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -78,11 +73,6 @@
           <Font name="Segoe UI" size="18" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="PLACEHOLDER&lt;NOME&gt;"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="RSLabel">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="R$"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="ValorLabel">

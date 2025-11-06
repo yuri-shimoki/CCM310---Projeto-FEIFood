@@ -30,7 +30,6 @@ public class AlimentoItemPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         NomeLabel = new javax.swing.JLabel();
-        RSLabel = new javax.swing.JLabel();
         ValorLabel = new javax.swing.JLabel();
         DetalhesButton = new javax.swing.JButton();
         PlusButton = new javax.swing.JButton();
@@ -40,8 +39,6 @@ public class AlimentoItemPanel extends javax.swing.JPanel {
 
         NomeLabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         NomeLabel.setText("PLACEHOLDER<NOME>");
-
-        RSLabel.setText("R$");
 
         ValorLabel.setText("PLACEHOLDER<VALOR>");
 
@@ -70,10 +67,8 @@ public class AlimentoItemPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(NomeLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(RSLabel)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(ValorLabel)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 165, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 185, Short.MAX_VALUE)
                         .addComponent(MinusButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(PlusButton)
@@ -92,19 +87,17 @@ public class AlimentoItemPanel extends javax.swing.JPanel {
                 .addComponent(NomeLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(RSLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(ValorLabel))
+                    .addComponent(ValorLabel)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 5, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(DetalhesButton)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(PlusButton)
+                                .addComponent(MinusButton))
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(QuantidadeTextoLabel)
-                                .addComponent(QuantidadeValorLabel)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(PlusButton)
-                                    .addComponent(MinusButton))))))
+                                .addComponent(QuantidadeValorLabel))
+                            .addComponent(DetalhesButton))))
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -121,7 +114,6 @@ public class AlimentoItemPanel extends javax.swing.JPanel {
     private javax.swing.JButton PlusButton;
     private javax.swing.JLabel QuantidadeTextoLabel;
     private javax.swing.JLabel QuantidadeValorLabel;
-    private javax.swing.JLabel RSLabel;
     private javax.swing.JLabel ValorLabel;
     // End of variables declaration//GEN-END:variables
 
@@ -171,14 +163,6 @@ public class AlimentoItemPanel extends javax.swing.JPanel {
 
     public void setQuantidadeValorLabel(JLabel QuantidadeValorLabel) {
         this.QuantidadeValorLabel = QuantidadeValorLabel;
-    }
-
-    public JLabel getRSLabel() {
-        return RSLabel;
-    }
-
-    public void setRSLabel(JLabel RSLabel) {
-        this.RSLabel = RSLabel;
     }
 
     public JLabel getValorLabel() {

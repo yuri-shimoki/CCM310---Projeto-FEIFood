@@ -9,7 +9,8 @@ import java.sql.SQLException;
  */
 public class Conexao
 {   
-    private Conexao() {}
+    private static final String porta = "5432";
+    private static final String senha = "feifood";
     
     /**
      * Método estático que cria uma nova conexão ao banco de dados.
@@ -20,9 +21,9 @@ public class Conexao
     public static Connection getConexao() throws SQLException
     {
         Connection conexao = DriverManager.getConnection(
-                "jdbc:postgresql://localhost:5432/feifood",
+                "jdbc:postgresql://localhost:" + porta + "/feifood",
                 "postgres",
-                "feifood");
+                senha);
         
         return conexao;
     }

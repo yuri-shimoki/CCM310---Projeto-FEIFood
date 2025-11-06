@@ -7,7 +7,9 @@ import java.sql.SQLException;
 import java.sql.ResultSet;
 import java.sql.PreparedStatement;
 import java.sql.Connection;
+import java.sql.Statement;
 import java.util.ArrayList;
+import javax.management.RuntimeErrorException;
 
 /**
  * Classe responsável por abstrair o acesso aos pedidos no banco de dados.
@@ -90,25 +92,72 @@ public class PedidoDao
         return resultado;
     }
     
-//    /**
-//     * Salva o <code>alimento</code> no banco de dados.
-//     * 
-//     * @param alimento o alimento a ser inserido.
-//     * @throws SQLException 
-//     */
-//    public static void inserir(Pedido pedido) throws SQLException
-//    {
-//        Connection conexao = Conexao.getConexao();
-//        
-//        String sql = "insert into usuarios(id, nome, senha) values (?, ?, ?);";
-//        PreparedStatement statement = conexao.prepareStatement(sql);
-//        
-//        statement.setInt(1, alimento.getId());
-//        statement.setString(2, alimento.getNome());
-//        statement.setString(3, alimento.getSenha());
-//        
-//        statement.execute();
-//                
-//        conexao.close();
-//    }
+    /**
+     * Salva o <code>pedido</code> no banco de dados.
+     * 
+     * @param pedido o pedido a ser inserido.
+     * @throws SQLException 
+     */
+    public static void inserir(Pedido pedido) throws SQLException
+    {
+        Connection conexao = Conexao.getConexao();
+        
+        /* Bloco try-catch-finally utilizado para realizar uma transação.
+         * Como 2 tabelas estão sendo modificadas, isto garante que, se um
+         * erro ocorrer entre elas, não haverá incoerências no estado delas.
+         * Em outras palavaras, isto garante uma política de "tudo ou nada".
+         */
+        try
+        {
+            conexao.setAutoCommit(false);
+            
+            String sql = """
+                         insert into pedidos(usuario_id)
+                         values (?)
+                         returning id;
+                         """;
+            PreparedStatement statement = conexao.prepareStatement(sql);
+
+            statement.setInt(1, pedido.getUsuario().getId());
+
+            ResultSet resultado = statement.executeQuery();
+
+            if (resultado.next())
+            {
+                pedido.setId(resultado.getInt(1));
+            }
+            else
+            {
+                throw new SQLException("O id do pedido não foi retornado corretamente.");
+            }
+
+            sql = """
+                  insert into pedido_alimento(pedido_id, alimento_id, quantidade_alimentos)
+                  values (?, ?, ?);
+                  """;
+
+            statement = conexao.prepareStatement(sql);
+
+            for (int i = 0; i < pedido.getAlimentos().size(); ++i)
+            {
+                statement.setInt(1, pedido.getId());
+                statement.setInt(2, pedido.getAlimentos().get(i).getId());
+                statement.setInt(3, pedido.getQuantidades().get(i));
+                statement.addBatch();
+            }
+
+            statement.executeBatch();
+
+            conexao.commit();
+        }
+        catch (SQLException e)
+        {
+            conexao.rollback();
+            throw e;
+        }
+        finally
+        {
+            conexao.close();
+        }
+    }
 }

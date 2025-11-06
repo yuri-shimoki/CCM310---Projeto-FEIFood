@@ -62,8 +62,7 @@ public class CriarTabela
     {
         criarTabela("pedidos",
                     "id serial primary key",
-                    "usuario_id integer not null references usuarios(id)",
-                    "senha varchar(12) not null"
+                    "usuario_id integer not null references usuarios(id)"
         );
     }
     

@@ -1,6 +1,7 @@
 package feifood.view;
 
 import javax.swing.JButton;
+import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 
@@ -29,13 +30,14 @@ public class MenuPrincipalFrame extends javax.swing.JFrame {
         AlimentosPanel = new javax.swing.JPanel();
         BuscarTextField = new javax.swing.JTextField();
         BuscarButton = new javax.swing.JButton();
+        HistoricoPedidosButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         CriarPedidoButton.setBackground(new java.awt.Color(21, 151, 237));
         CriarPedidoButton.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         CriarPedidoButton.setForeground(new java.awt.Color(255, 255, 255));
-        CriarPedidoButton.setText("+ Clique para Criar um Pedido");
+        CriarPedidoButton.setText("+ Criar um Pedido");
         CriarPedidoButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 123, 206), 3));
         CriarPedidoButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -44,11 +46,23 @@ public class MenuPrincipalFrame extends javax.swing.JFrame {
         });
 
         AlimentosScrollPane.setBackground(new java.awt.Color(211, 237, 255));
+        AlimentosScrollPane.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 
         AlimentosPanel.setLayout(new java.awt.GridLayout(0, 1, 0, 1));
         AlimentosScrollPane.setViewportView(AlimentosPanel);
 
         BuscarButton.setText("Buscar");
+
+        HistoricoPedidosButton.setBackground(new java.awt.Color(21, 151, 237));
+        HistoricoPedidosButton.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        HistoricoPedidosButton.setForeground(new java.awt.Color(255, 255, 255));
+        HistoricoPedidosButton.setText("Histórico de Pedidos");
+        HistoricoPedidosButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 123, 206), 3));
+        HistoricoPedidosButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                HistoricoPedidosButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -58,11 +72,14 @@ public class MenuPrincipalFrame extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(AlimentosScrollPane, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(CriarPedidoButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 664, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(BuscarTextField)
                         .addGap(18, 18, 18)
-                        .addComponent(BuscarButton)))
+                        .addComponent(BuscarButton))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(CriarPedidoButton, javax.swing.GroupLayout.PREFERRED_SIZE, 344, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(HistoricoPedidosButton, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -75,7 +92,9 @@ public class MenuPrincipalFrame extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(AlimentosScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(CriarPedidoButton, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(CriarPedidoButton, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(HistoricoPedidosButton, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
@@ -85,6 +104,10 @@ public class MenuPrincipalFrame extends javax.swing.JFrame {
     private void CriarPedidoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CriarPedidoButtonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_CriarPedidoButtonActionPerformed
+
+    private void HistoricoPedidosButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HistoricoPedidosButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_HistoricoPedidosButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -117,6 +140,7 @@ public class MenuPrincipalFrame extends javax.swing.JFrame {
     private javax.swing.JButton BuscarButton;
     private javax.swing.JTextField BuscarTextField;
     private javax.swing.JButton CriarPedidoButton;
+    private javax.swing.JButton HistoricoPedidosButton;
     // End of variables declaration//GEN-END:variables
 
     public JScrollPane getAlimentosScrollPane() {
@@ -150,4 +174,22 @@ public class MenuPrincipalFrame extends javax.swing.JFrame {
     public void setCriarPedidoButton(JButton CriarPedidoButton) {
         this.CriarPedidoButton = CriarPedidoButton;
     }
+
+    public JPanel getAlimentosPanel() {
+        return AlimentosPanel;
+    }
+
+    public void setAlimentosPanel(JPanel AlimentosPanel) {
+        this.AlimentosPanel = AlimentosPanel;
+    }
+
+    public JButton getHistoricoPedidosButton() {
+        return HistoricoPedidosButton;
+    }
+
+    public void setHistoricoPedidosButton(JButton HistoricoPedidosButton) {
+        this.HistoricoPedidosButton = HistoricoPedidosButton;
+    }
+    
+    
 }

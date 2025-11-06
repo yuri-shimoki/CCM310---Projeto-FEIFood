@@ -58,12 +58,6 @@ public class LoginController
                 return;
             }
             
-            /* [ATENÇÃO]: Em uma aplicação real, seria necessário verificar se
-             * se a entrada não constitui um código SQL afim de evitar ataques
-             * de injeção de SQL. Estou considerando que este tipo de
-             * verificação está fora do escopo do projeto. Portanto, irei
-             * omiti-la.
-             */
             try
             {
                 var resultado = UsuarioDao.consultarPorNomeESenha(nome, senha);

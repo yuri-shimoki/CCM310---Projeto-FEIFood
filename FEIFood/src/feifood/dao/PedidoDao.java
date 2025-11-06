@@ -24,7 +24,7 @@ public class PedidoDao
      * @return o resultado da consulta ao banco de dados.
      * @throws SQLException 
      */
-    public static ResultSet consultar(Pedido pedido) throws SQLException
+    public static Pedido consultar(Pedido pedido) throws SQLException
     {
         Connection conexao = Conexao.getConexao();
         
@@ -55,8 +55,6 @@ public class PedidoDao
         statement.execute();
         
         ResultSet resultado = statement.getResultSet();
-                
-        conexao.close();
         
         Pedido resultadoPedido = null;
         
@@ -89,7 +87,9 @@ public class PedidoDao
             resultadoPedido.setQuantidades(new ArrayList<Integer>(quantidadesAlimentos));
         }
         
-        return resultado;
+        conexao.close();
+        
+        return resultadoPedido;
     }
     
     /**

@@ -37,6 +37,8 @@ public class VerificarBancoDeDados
             existe = resultado.getBoolean(1);
         }
         
+        conexao.close();
+        
         return existe;
     }
     

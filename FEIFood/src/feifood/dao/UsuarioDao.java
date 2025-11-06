@@ -40,8 +40,6 @@ public class UsuarioDao
         statement.setString(2, senha);
         
         ResultSet resultado = statement.executeQuery();
-                
-        conexao.close();
         
         Usuario usuarioRequisitado = null;
         
@@ -52,6 +50,8 @@ public class UsuarioDao
                                              resultado.getString("senha")
             );
         }
+        
+        conexao.close();
         
         return usuarioRequisitado;
     }

@@ -26,6 +26,7 @@ public class MenuPrincipalFrame extends javax.swing.JFrame {
 
         CriarPedidoButton = new javax.swing.JButton();
         AlimentosScrollPane = new javax.swing.JScrollPane();
+        AlimentosPanel = new javax.swing.JPanel();
         BuscarTextField = new javax.swing.JTextField();
         BuscarButton = new javax.swing.JButton();
 
@@ -43,6 +44,9 @@ public class MenuPrincipalFrame extends javax.swing.JFrame {
         });
 
         AlimentosScrollPane.setBackground(new java.awt.Color(211, 237, 255));
+
+        AlimentosPanel.setLayout(new java.awt.GridLayout(0, 1, 0, 1));
+        AlimentosScrollPane.setViewportView(AlimentosPanel);
 
         BuscarButton.setText("Buscar");
 
@@ -108,6 +112,7 @@ public class MenuPrincipalFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel AlimentosPanel;
     private javax.swing.JScrollPane AlimentosScrollPane;
     private javax.swing.JButton BuscarButton;
     private javax.swing.JTextField BuscarTextField;

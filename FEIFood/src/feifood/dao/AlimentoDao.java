@@ -12,6 +12,7 @@ import java.util.ArrayList;
  */
 public class AlimentoDao
 {
+    
     /**
      * Realiza uma consulta case-insensitive por nome nos alimentos no
      * banco de dados.

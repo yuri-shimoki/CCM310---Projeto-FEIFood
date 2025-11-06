@@ -3,6 +3,8 @@ package feifood.view;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextPane;
 
 public class AlimentoInfoFrame extends javax.swing.JFrame {
     
@@ -25,20 +27,18 @@ public class AlimentoInfoFrame extends javax.swing.JFrame {
     private void initComponents() {
 
         BackgroundPanel = new javax.swing.JPanel();
-        NomeDoAlimentoLabel = new javax.swing.JLabel();
-        TipoDoAlimentoLabel = new javax.swing.JLabel();
         VoltarButton = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTextPane1 = new javax.swing.JTextPane();
-        jLabel2 = new javax.swing.JLabel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jTextPane2 = new javax.swing.JTextPane();
-        jLabel3 = new javax.swing.JLabel();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        jTextPane3 = new javax.swing.JTextPane();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
+        NomeLabel = new javax.swing.JLabel();
+        NomeScroll = new javax.swing.JScrollPane();
+        NomeText = new javax.swing.JTextPane();
+        ValorLabel = new javax.swing.JLabel();
+        ValorScroll = new javax.swing.JScrollPane();
+        ValorText = new javax.swing.JTextPane();
+        TipoLabel = new javax.swing.JLabel();
+        TipoScroll = new javax.swing.JScrollPane();
+        TipoText = new javax.swing.JTextPane();
+        RsLabel = new javax.swing.JLabel();
+        InformacoesAlimentoLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -46,43 +46,43 @@ public class AlimentoInfoFrame extends javax.swing.JFrame {
 
         VoltarButton.setText("Voltar");
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
-        jLabel1.setText("Nome:");
+        NomeLabel.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        NomeLabel.setText("Nome:");
 
-        jTextPane1.setEditable(false);
-        jTextPane1.setBackground(new java.awt.Color(211, 237, 255));
-        jTextPane1.setBorder(null);
-        jTextPane1.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
-        jTextPane1.setForeground(new java.awt.Color(102, 102, 102));
-        jScrollPane1.setViewportView(jTextPane1);
+        NomeText.setEditable(false);
+        NomeText.setBackground(new java.awt.Color(211, 237, 255));
+        NomeText.setBorder(null);
+        NomeText.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        NomeText.setForeground(new java.awt.Color(102, 102, 102));
+        NomeScroll.setViewportView(NomeText);
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
-        jLabel2.setText("Valor:");
+        ValorLabel.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        ValorLabel.setText("Valor:");
 
-        jTextPane2.setEditable(false);
-        jTextPane2.setBackground(new java.awt.Color(211, 237, 255));
-        jTextPane2.setBorder(null);
-        jTextPane2.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
-        jTextPane2.setForeground(new java.awt.Color(102, 102, 102));
-        jTextPane2.setAutoscrolls(false);
-        jScrollPane2.setViewportView(jTextPane2);
+        ValorText.setEditable(false);
+        ValorText.setBackground(new java.awt.Color(211, 237, 255));
+        ValorText.setBorder(null);
+        ValorText.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        ValorText.setForeground(new java.awt.Color(102, 102, 102));
+        ValorText.setAutoscrolls(false);
+        ValorScroll.setViewportView(ValorText);
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
-        jLabel3.setText("Tipo:");
+        TipoLabel.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        TipoLabel.setText("Tipo:");
 
-        jTextPane3.setEditable(false);
-        jTextPane3.setBackground(new java.awt.Color(211, 237, 255));
-        jTextPane3.setBorder(null);
-        jTextPane3.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
-        jTextPane3.setForeground(new java.awt.Color(102, 102, 102));
-        jScrollPane3.setViewportView(jTextPane3);
+        TipoText.setEditable(false);
+        TipoText.setBackground(new java.awt.Color(211, 237, 255));
+        TipoText.setBorder(null);
+        TipoText.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        TipoText.setForeground(new java.awt.Color(102, 102, 102));
+        TipoScroll.setViewportView(TipoText);
 
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel4.setText("R$");
+        RsLabel.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        RsLabel.setForeground(new java.awt.Color(102, 102, 102));
+        RsLabel.setText("R$");
 
-        jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
-        jLabel5.setText("Informações do Alimento");
+        InformacoesAlimentoLabel.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        InformacoesAlimentoLabel.setText("Informações do Alimento");
 
         javax.swing.GroupLayout BackgroundPanelLayout = new javax.swing.GroupLayout(BackgroundPanel);
         BackgroundPanel.setLayout(BackgroundPanelLayout);
@@ -91,61 +91,45 @@ public class AlimentoInfoFrame extends javax.swing.JFrame {
             .addGroup(BackgroundPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(BackgroundPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(InformacoesAlimentoLabel)
                     .addGroup(BackgroundPanelLayout.createSequentialGroup()
-                        .addGroup(BackgroundPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel5)
-                            .addGroup(BackgroundPanelLayout.createSequentialGroup()
-                                .addComponent(jLabel1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(NomeLabel)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(BackgroundPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(NomeDoAlimentoLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 3, Short.MAX_VALUE)
-                            .addComponent(TipoDoAlimentoLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(NomeScroll, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(VoltarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(BackgroundPanelLayout.createSequentialGroup()
-                        .addGroup(BackgroundPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(VoltarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(15, 15, 15)
+                        .addGroup(BackgroundPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(ValorLabel)
+                            .addComponent(TipoLabel))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(BackgroundPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addGroup(BackgroundPanelLayout.createSequentialGroup()
-                                .addGap(15, 15, 15)
-                                .addGroup(BackgroundPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel2)
-                                    .addComponent(jLabel3))
+                                .addComponent(RsLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(BackgroundPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addGroup(BackgroundPanelLayout.createSequentialGroup()
-                                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(jScrollPane3))))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                                .addComponent(ValorScroll, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(TipoScroll))))
+                .addContainerGap(19, Short.MAX_VALUE))
         );
         BackgroundPanelLayout.setVerticalGroup(
             BackgroundPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(BackgroundPanelLayout.createSequentialGroup()
                 .addContainerGap()
+                .addComponent(InformacoesAlimentoLabel)
+                .addGap(18, 18, 18)
                 .addGroup(BackgroundPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(NomeDoAlimentoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5))
-                .addGroup(BackgroundPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(BackgroundPanelLayout.createSequentialGroup()
-                        .addGap(26, 26, 26)
-                        .addComponent(TipoDoAlimentoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(BackgroundPanelLayout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addGroup(BackgroundPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addComponent(NomeLabel)
+                    .addComponent(NomeScroll, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(BackgroundPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(BackgroundPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel2)
-                        .addComponent(jLabel4))
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(ValorLabel)
+                        .addComponent(RsLabel))
+                    .addComponent(ValorScroll, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(BackgroundPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(TipoLabel)
+                    .addComponent(TipoScroll, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 115, Short.MAX_VALUE)
                 .addComponent(VoltarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -192,20 +176,18 @@ public class AlimentoInfoFrame extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel BackgroundPanel;
-    private javax.swing.JLabel NomeDoAlimentoLabel;
-    private javax.swing.JLabel TipoDoAlimentoLabel;
+    private javax.swing.JLabel InformacoesAlimentoLabel;
+    private javax.swing.JLabel NomeLabel;
+    private javax.swing.JScrollPane NomeScroll;
+    private javax.swing.JTextPane NomeText;
+    private javax.swing.JLabel RsLabel;
+    private javax.swing.JLabel TipoLabel;
+    private javax.swing.JScrollPane TipoScroll;
+    private javax.swing.JTextPane TipoText;
+    private javax.swing.JLabel ValorLabel;
+    private javax.swing.JScrollPane ValorScroll;
+    private javax.swing.JTextPane ValorText;
     private javax.swing.JButton VoltarButton;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JTextPane jTextPane1;
-    private javax.swing.JTextPane jTextPane2;
-    private javax.swing.JTextPane jTextPane3;
     // End of variables declaration//GEN-END:variables
 
     public JPanel getBackgroundPanel() {
@@ -216,20 +198,92 @@ public class AlimentoInfoFrame extends javax.swing.JFrame {
         this.BackgroundPanel = BackgroundPanel;
     }
 
-    public JLabel getNomeDoAlimentoLabel() {
-        return NomeDoAlimentoLabel;
+    public JLabel getInformacoesAlimentoLabel() {
+        return InformacoesAlimentoLabel;
     }
 
-    public void setNomeDoAlimentoLabel(JLabel NomeDoAlimentoLabel) {
-        this.NomeDoAlimentoLabel = NomeDoAlimentoLabel;
+    public void setInformacoesAlimentoLabel(JLabel InformacoesAlimentoLabel) {
+        this.InformacoesAlimentoLabel = InformacoesAlimentoLabel;
     }
 
-    public JLabel getTipoDoAlimentoLabel() {
-        return TipoDoAlimentoLabel;
+    public JLabel getNomeLabel() {
+        return NomeLabel;
     }
 
-    public void setTipoDoAlimentoLabel(JLabel TipoDoAlimentoLabel) {
-        this.TipoDoAlimentoLabel = TipoDoAlimentoLabel;
+    public void setNomeLabel(JLabel NomeLabel) {
+        this.NomeLabel = NomeLabel;
+    }
+
+    public JScrollPane getNomeScroll() {
+        return NomeScroll;
+    }
+
+    public void setNomeScroll(JScrollPane NomeScroll) {
+        this.NomeScroll = NomeScroll;
+    }
+
+    public JTextPane getNomeText() {
+        return NomeText;
+    }
+
+    public void setNomeText(JTextPane NomeText) {
+        this.NomeText = NomeText;
+    }
+
+    public JLabel getRsLabel() {
+        return RsLabel;
+    }
+
+    public void setRsLabel(JLabel RsLabel) {
+        this.RsLabel = RsLabel;
+    }
+
+    public JLabel getTipoLabel() {
+        return TipoLabel;
+    }
+
+    public void setTipoLabel(JLabel TipoLabel) {
+        this.TipoLabel = TipoLabel;
+    }
+
+    public JScrollPane getTipoScroll() {
+        return TipoScroll;
+    }
+
+    public void setTipoScroll(JScrollPane TipoScroll) {
+        this.TipoScroll = TipoScroll;
+    }
+
+    public JTextPane getTipoText() {
+        return TipoText;
+    }
+
+    public void setTipoText(JTextPane TipoText) {
+        this.TipoText = TipoText;
+    }
+
+    public JLabel getValorLabel() {
+        return ValorLabel;
+    }
+
+    public void setValorLabel(JLabel ValorLabel) {
+        this.ValorLabel = ValorLabel;
+    }
+
+    public JScrollPane getValorScroll() {
+        return ValorScroll;
+    }
+
+    public void setValorScroll(JScrollPane ValorScroll) {
+        this.ValorScroll = ValorScroll;
+    }
+
+    public JTextPane getValorText() {
+        return ValorText;
+    }
+
+    public void setValorText(JTextPane ValorText) {
+        this.ValorText = ValorText;
     }
 
     public JButton getVoltarButton() {
@@ -239,4 +293,6 @@ public class AlimentoInfoFrame extends javax.swing.JFrame {
     public void setVoltarButton(JButton VoltarButton) {
         this.VoltarButton = VoltarButton;
     }
+
+    
 }

@@ -28,18 +28,13 @@ public class Alimento
      */
     public enum Tipo
     {
-        BEBIDA(0), BEBIDA_ALCOOLICA(1), COMIDA(2);
+        NULO(-1), BEBIDA(0), BEBIDA_ALCOOLICA(1), COMIDA(2);
         
         private final int codigo;
         
         Tipo(int codigo)
         {
             this.codigo = codigo;
-        }
-        
-        public int getCodigo()
-        {
-            return codigo;
         }
         
         public static Tipo codigoParaTipo(int codigo) {
@@ -50,6 +45,31 @@ public class Alimento
             }
             
             throw new IllegalArgumentException("Código desconhecido: " + codigo);
+        }
+        
+        @Override
+        public String toString()
+        {
+            // Switch case não funciona com expressões não constantes ¬¬
+            if (this.codigo == BEBIDA.getCodigo())
+            {
+                return "Bebida";
+            }
+            else if (this.codigo == BEBIDA_ALCOOLICA.getCodigo())
+            {
+                return "Bebida Alcoólica";
+            }
+            else if (this.codigo == COMIDA.getCodigo())
+            {
+                return "Comida";
+            }
+            
+            return "Nulo";
+        }
+        
+        public int getCodigo()
+        {
+            return codigo;
         }
     }
 

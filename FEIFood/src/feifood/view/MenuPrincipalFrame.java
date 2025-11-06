@@ -1,5 +1,7 @@
 package feifood.view;
 
+import feifood.model.Alimento;
+import java.util.ArrayList;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
@@ -25,44 +27,36 @@ public class MenuPrincipalFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        CriarPedidoButton = new javax.swing.JButton();
         AlimentosScrollPane = new javax.swing.JScrollPane();
         AlimentosPanel = new javax.swing.JPanel();
         BuscarTextField = new javax.swing.JTextField();
         BuscarButton = new javax.swing.JButton();
-        HistoricoPedidosButton = new javax.swing.JButton();
+        ConfirmarPedidoButton = new javax.swing.JButton();
+        LimparPedidoButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        CriarPedidoButton.setBackground(new java.awt.Color(21, 151, 237));
-        CriarPedidoButton.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        CriarPedidoButton.setForeground(new java.awt.Color(255, 255, 255));
-        CriarPedidoButton.setText("+ Criar um Pedido");
-        CriarPedidoButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 123, 206), 3));
-        CriarPedidoButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CriarPedidoButtonActionPerformed(evt);
-            }
-        });
 
         AlimentosScrollPane.setBackground(new java.awt.Color(211, 237, 255));
         AlimentosScrollPane.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 
-        AlimentosPanel.setLayout(new java.awt.GridLayout(0, 1, 0, 1));
+        AlimentosPanel.setLayout(new javax.swing.BoxLayout(AlimentosPanel, javax.swing.BoxLayout.Y_AXIS));
         AlimentosScrollPane.setViewportView(AlimentosPanel);
 
         BuscarButton.setText("Buscar");
 
-        HistoricoPedidosButton.setBackground(new java.awt.Color(21, 151, 237));
-        HistoricoPedidosButton.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        HistoricoPedidosButton.setForeground(new java.awt.Color(255, 255, 255));
-        HistoricoPedidosButton.setText("Histórico de Pedidos");
-        HistoricoPedidosButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 123, 206), 3));
-        HistoricoPedidosButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                HistoricoPedidosButtonActionPerformed(evt);
-            }
-        });
+        ConfirmarPedidoButton.setBackground(new java.awt.Color(21, 151, 237));
+        ConfirmarPedidoButton.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        ConfirmarPedidoButton.setForeground(new java.awt.Color(255, 255, 255));
+        ConfirmarPedidoButton.setText("Confirmar Pedido");
+        ConfirmarPedidoButton.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(12, 105, 166), 1, true));
+        ConfirmarPedidoButton.setBorderPainted(false);
+
+        LimparPedidoButton.setBackground(new java.awt.Color(21, 151, 237));
+        LimparPedidoButton.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        LimparPedidoButton.setForeground(new java.awt.Color(255, 255, 255));
+        LimparPedidoButton.setText("Limpar Pedido");
+        LimparPedidoButton.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(13, 109, 173), 1, true));
+        LimparPedidoButton.setBorderPainted(false);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -73,41 +67,33 @@ public class MenuPrincipalFrame extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(AlimentosScrollPane, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(BuscarTextField)
+                        .addComponent(BuscarTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 579, Short.MAX_VALUE)
                         .addGap(18, 18, 18)
                         .addComponent(BuscarButton))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(CriarPedidoButton, javax.swing.GroupLayout.PREFERRED_SIZE, 344, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(LimparPedidoButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(18, 18, 18)
-                        .addComponent(HistoricoPedidosButton, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(ConfirmarPedidoButton, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(7, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BuscarTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BuscarButton))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(AlimentosScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(CriarPedidoButton, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(HistoricoPedidosButton, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(ConfirmarPedidoButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(LimparPedidoButton, javax.swing.GroupLayout.DEFAULT_SIZE, 63, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void CriarPedidoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CriarPedidoButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_CriarPedidoButtonActionPerformed
-
-    private void HistoricoPedidosButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HistoricoPedidosButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_HistoricoPedidosButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -139,9 +125,22 @@ public class MenuPrincipalFrame extends javax.swing.JFrame {
     private javax.swing.JScrollPane AlimentosScrollPane;
     private javax.swing.JButton BuscarButton;
     private javax.swing.JTextField BuscarTextField;
-    private javax.swing.JButton CriarPedidoButton;
-    private javax.swing.JButton HistoricoPedidosButton;
+    private javax.swing.JButton ConfirmarPedidoButton;
+    private javax.swing.JButton LimparPedidoButton;
     // End of variables declaration//GEN-END:variables
+
+    public void adicionarAlimentos(ArrayList<Alimento> alimento)
+    {
+        
+    }
+    
+    public JPanel getAlimentosPanel() {
+        return AlimentosPanel;
+    }
+
+    public void setAlimentosPanel(JPanel AlimentosPanel) {
+        this.AlimentosPanel = AlimentosPanel;
+    }
 
     public JScrollPane getAlimentosScrollPane() {
         return AlimentosScrollPane;
@@ -167,29 +166,21 @@ public class MenuPrincipalFrame extends javax.swing.JFrame {
         this.BuscarTextField = BuscarTextField;
     }
 
-    public JButton getCriarPedidoButton() {
-        return CriarPedidoButton;
+    public JButton getConfirmarPedidoButton() {
+        return ConfirmarPedidoButton;
     }
 
-    public void setCriarPedidoButton(JButton CriarPedidoButton) {
-        this.CriarPedidoButton = CriarPedidoButton;
+    public void setConfirmarPedidoButton(JButton ConfirmarPedidoButton) {
+        this.ConfirmarPedidoButton = ConfirmarPedidoButton;
     }
 
-    public JPanel getAlimentosPanel() {
-        return AlimentosPanel;
+    public JButton getLimparPedidoButton() {
+        return LimparPedidoButton;
     }
 
-    public void setAlimentosPanel(JPanel AlimentosPanel) {
-        this.AlimentosPanel = AlimentosPanel;
+    public void setLimparPedidoButton(JButton LimparPedidoButton) {
+        this.LimparPedidoButton = LimparPedidoButton;
     }
 
-    public JButton getHistoricoPedidosButton() {
-        return HistoricoPedidosButton;
-    }
-
-    public void setHistoricoPedidosButton(JButton HistoricoPedidosButton) {
-        this.HistoricoPedidosButton = HistoricoPedidosButton;
-    }
-    
     
 }

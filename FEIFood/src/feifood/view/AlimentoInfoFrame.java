@@ -37,7 +37,6 @@ public class AlimentoInfoFrame extends javax.swing.JFrame {
         TipoLabel = new javax.swing.JLabel();
         TipoScroll = new javax.swing.JScrollPane();
         TipoText = new javax.swing.JTextPane();
-        RsLabel = new javax.swing.JLabel();
         InformacoesAlimentoLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -49,6 +48,9 @@ public class AlimentoInfoFrame extends javax.swing.JFrame {
         NomeLabel.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         NomeLabel.setText("Nome:");
 
+        NomeScroll.setBorder(null);
+        NomeScroll.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+
         NomeText.setEditable(false);
         NomeText.setBackground(new java.awt.Color(211, 237, 255));
         NomeText.setBorder(null);
@@ -58,6 +60,9 @@ public class AlimentoInfoFrame extends javax.swing.JFrame {
 
         ValorLabel.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         ValorLabel.setText("Valor:");
+
+        ValorScroll.setBorder(null);
+        ValorScroll.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 
         ValorText.setEditable(false);
         ValorText.setBackground(new java.awt.Color(211, 237, 255));
@@ -70,16 +75,15 @@ public class AlimentoInfoFrame extends javax.swing.JFrame {
         TipoLabel.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         TipoLabel.setText("Tipo:");
 
+        TipoScroll.setBorder(null);
+        TipoScroll.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+
         TipoText.setEditable(false);
         TipoText.setBackground(new java.awt.Color(211, 237, 255));
         TipoText.setBorder(null);
         TipoText.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         TipoText.setForeground(new java.awt.Color(102, 102, 102));
         TipoScroll.setViewportView(TipoText);
-
-        RsLabel.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
-        RsLabel.setForeground(new java.awt.Color(102, 102, 102));
-        RsLabel.setText("R$");
 
         InformacoesAlimentoLabel.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         InformacoesAlimentoLabel.setText("Informações do Alimento");
@@ -103,12 +107,9 @@ public class AlimentoInfoFrame extends javax.swing.JFrame {
                             .addComponent(ValorLabel)
                             .addComponent(TipoLabel))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(BackgroundPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addGroup(BackgroundPanelLayout.createSequentialGroup()
-                                .addComponent(RsLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(ValorScroll, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(TipoScroll))))
+                        .addGroup(BackgroundPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(TipoScroll, javax.swing.GroupLayout.DEFAULT_SIZE, 336, Short.MAX_VALUE)
+                            .addComponent(ValorScroll))))
                 .addContainerGap(19, Short.MAX_VALUE))
         );
         BackgroundPanelLayout.setVerticalGroup(
@@ -119,18 +120,16 @@ public class AlimentoInfoFrame extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(BackgroundPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(NomeLabel)
-                    .addComponent(NomeScroll, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(NomeScroll, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(BackgroundPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(BackgroundPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(ValorLabel)
-                        .addComponent(RsLabel))
+                    .addComponent(ValorLabel)
                     .addComponent(ValorScroll, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(BackgroundPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(TipoLabel)
                     .addComponent(TipoScroll, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 115, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 100, Short.MAX_VALUE)
                 .addComponent(VoltarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -180,7 +179,6 @@ public class AlimentoInfoFrame extends javax.swing.JFrame {
     private javax.swing.JLabel NomeLabel;
     private javax.swing.JScrollPane NomeScroll;
     private javax.swing.JTextPane NomeText;
-    private javax.swing.JLabel RsLabel;
     private javax.swing.JLabel TipoLabel;
     private javax.swing.JScrollPane TipoScroll;
     private javax.swing.JTextPane TipoText;
@@ -228,14 +226,6 @@ public class AlimentoInfoFrame extends javax.swing.JFrame {
 
     public void setNomeText(JTextPane NomeText) {
         this.NomeText = NomeText;
-    }
-
-    public JLabel getRsLabel() {
-        return RsLabel;
-    }
-
-    public void setRsLabel(JLabel RsLabel) {
-        this.RsLabel = RsLabel;
     }
 
     public JLabel getTipoLabel() {

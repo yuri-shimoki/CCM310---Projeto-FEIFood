@@ -37,6 +37,8 @@ public class AlimentoItemPanel extends javax.swing.JPanel {
         QuantidadeTextoLabel = new javax.swing.JLabel();
         QuantidadeValorLabel = new javax.swing.JLabel();
 
+        setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 102)));
+
         NomeLabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         NomeLabel.setText("PLACEHOLDER<NOME>");
 
@@ -68,7 +70,7 @@ public class AlimentoItemPanel extends javax.swing.JPanel {
                     .addComponent(NomeLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(ValorLabel)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 185, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 183, Short.MAX_VALUE)
                         .addComponent(MinusButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(PlusButton)
@@ -89,12 +91,11 @@ public class AlimentoItemPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(ValorLabel)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 5, Short.MAX_VALUE)
+                        .addGap(0, 3, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(PlusButton)
-                                .addComponent(MinusButton))
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(MinusButton)
                                 .addComponent(QuantidadeTextoLabel)
                                 .addComponent(QuantidadeValorLabel))
                             .addComponent(DetalhesButton))))

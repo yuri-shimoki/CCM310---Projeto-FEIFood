@@ -66,7 +66,7 @@ public class LoginController
                 
                 if (resultado != null)
                 {
-                    var menuPrincipal = new MenuPrincipalController();
+                    var menuPrincipal = new MenuPrincipalController(resultado);
                     telaDeLogin.dispose();
                 }
                 else

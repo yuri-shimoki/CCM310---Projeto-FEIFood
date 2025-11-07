@@ -28,6 +28,12 @@ public class PainelAlimentosController
         listarTodosAlimentos();
     }
     
+    
+    /**
+     * Lista apenas os alimentos cujo início do nome coincide com a entrada
+     * 
+     * @param entrada o termo de busca de alimentos dada pelo usuário
+     */
     public void buscarEListarAlimento(String entrada)
     {
         var alimentos = pedido.getAlimentos();
@@ -63,6 +69,9 @@ public class PainelAlimentosController
         }
     }
     
+    /**
+     * Lista todos os alimentos no painel de alimentos.
+     */
     public void listarTodosAlimentos()
     {
         painelDeAlimentos.removeAll();

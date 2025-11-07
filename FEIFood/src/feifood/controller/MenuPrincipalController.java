@@ -7,7 +7,6 @@ import feifood.model.Pedido;
 import feifood.model.Usuario;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.concurrent.atomic.AtomicInteger;
 import javax.swing.JOptionPane;
 
 /**
@@ -56,7 +55,47 @@ public class MenuPrincipalController {
         });
         
         telaPrincipal.getConfirmarPedidoButton().addActionListener(e -> {
-        
+            boolean pedidoValido = false;
+            
+            for (var quantidade : painelAlimentos.getQuantidades())
+            {
+                if (quantidade != 0)
+                    pedidoValido = true;
+            }
+            
+            if (!pedidoValido)
+            {
+                JOptionPane.showMessageDialog(telaPrincipal,
+                                          "Seu pedido está vazio.\n"
+                                                + "Selecione pelo menos 1 "
+                                                + "alimento.",
+                                          "Pedido Inválido",
+                                          JOptionPane.INFORMATION_MESSAGE
+                );
+                
+                return;
+            }
+            
+            Object[] opcoes = {1, 2, 3, 4, 5};
+            int avaliacao = (int) JOptionPane.showInputDialog(
+                telaPrincipal,
+                "Seu pedido foi entregue.\nPor favor, avalie o serviço:",
+                "Pedido Entregue - Avalie o Serviço",
+                JOptionPane.QUESTION_MESSAGE,
+                null,
+                opcoes,
+                opcoes[0]
+            );
+            
+            JOptionPane.showMessageDialog(telaPrincipal,
+                                          "Obrigado pela sua avaliação.\n"
+                                                + "Você deu " + avaliacao
+                                                + " estrelas.",
+                                          "Volte Sempre",
+                                          JOptionPane.INFORMATION_MESSAGE
+            );
+            
+            painelAlimentos.limparQuantidades();
         });
         
         telaPrincipal.getLimparPedidoButton().addActionListener(e -> {

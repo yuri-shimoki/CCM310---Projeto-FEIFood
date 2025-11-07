@@ -33,6 +33,7 @@ public class MenuPrincipalFrame extends javax.swing.JFrame {
         BuscarButton = new javax.swing.JButton();
         ConfirmarPedidoButton = new javax.swing.JButton();
         LimparPedidoButton = new javax.swing.JButton();
+        CancelarButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -58,6 +59,8 @@ public class MenuPrincipalFrame extends javax.swing.JFrame {
         LimparPedidoButton.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(13, 109, 173), 1, true));
         LimparPedidoButton.setBorderPainted(false);
 
+        CancelarButton.setText("Cancelar");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -67,9 +70,11 @@ public class MenuPrincipalFrame extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(AlimentosScrollPane, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(BuscarTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 579, Short.MAX_VALUE)
-                        .addGap(18, 18, 18)
-                        .addComponent(BuscarButton))
+                        .addComponent(BuscarTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 509, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(BuscarButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(CancelarButton))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(LimparPedidoButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(18, 18, 18)
@@ -82,7 +87,8 @@ public class MenuPrincipalFrame extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BuscarTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(BuscarButton))
+                    .addComponent(BuscarButton)
+                    .addComponent(CancelarButton))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(AlimentosScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -125,15 +131,11 @@ public class MenuPrincipalFrame extends javax.swing.JFrame {
     private javax.swing.JScrollPane AlimentosScrollPane;
     private javax.swing.JButton BuscarButton;
     private javax.swing.JTextField BuscarTextField;
+    private javax.swing.JButton CancelarButton;
     private javax.swing.JButton ConfirmarPedidoButton;
     private javax.swing.JButton LimparPedidoButton;
     // End of variables declaration//GEN-END:variables
 
-    public void adicionarAlimentos(ArrayList<Alimento> alimento)
-    {
-        
-    }
-    
     public JPanel getAlimentosPanel() {
         return AlimentosPanel;
     }
@@ -182,5 +184,11 @@ public class MenuPrincipalFrame extends javax.swing.JFrame {
         this.LimparPedidoButton = LimparPedidoButton;
     }
 
-    
+    public JButton getCancelarButton() {
+        return CancelarButton;
+    }
+
+    public void setCancelarButton(JButton CancelarButton) {
+        this.CancelarButton = CancelarButton;
+    }
 }

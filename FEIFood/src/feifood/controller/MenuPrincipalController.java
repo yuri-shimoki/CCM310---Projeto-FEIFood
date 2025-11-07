@@ -7,6 +7,7 @@ import feifood.model.Pedido;
 import feifood.model.Usuario;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Locale;
 import javax.swing.JOptionPane;
 
 /**
@@ -51,7 +52,16 @@ public class MenuPrincipalController {
         }
         
         telaPrincipal.getBuscarButton().addActionListener(e -> {
+            var entrada = telaPrincipal.getBuscarTextField()
+                                       .getText()
+                                       .trim()
+                                       .toLowerCase();
+            
+            painelAlimentos.buscarEListarAlimento(entrada);
+        });
         
+        telaPrincipal.getCancelarButton().addActionListener(e -> {
+            painelAlimentos.listarTodosAlimentos();
         });
         
         telaPrincipal.getConfirmarPedidoButton().addActionListener(e -> {

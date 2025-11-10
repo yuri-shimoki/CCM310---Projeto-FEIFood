@@ -15,5 +15,5 @@ public interface Imposto_Alcool
      * @param valor o valor da bebida.
      * @return valor da bebida após aplicação de imposto do álcool.
      */
-    BigDecimal aplicarImposto(BigDecimal valor);
+    BigDecimal getValorComImposto();
 }

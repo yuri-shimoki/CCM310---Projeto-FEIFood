@@ -20,10 +20,10 @@ Este programa tem como funcionalidade:
 
 ## Arquivos no Projeto
 
-Este projeto conta com uma pasta FEIFood que contém um projeto do NetBeans. Dentro dessa pasta, é possível encontrar, relativo a pasta raiz do projeto:
-- src/feifood/: o código fonte do projeto.
-- dist/FEIFood.jar: o arquivo .jar executável deste projeto.
-- dist/javadoc/index.html: o arquivo de documentação do projeto gerado pelo Javadoc.
+Este projeto conta com uma pasta FEIFood que contém um projeto do NetBeans. Dentro dessa pasta, é possível encontrar:
+- FEIFood/src/feifood/: o código fonte do projeto.
+- FEIFood.jar: o arquivo .jar executável deste projeto.
+- javadoc.zip: o arquivo de documentação do projeto gerado pelo Javadoc (compactado).
 
 ## Diagrama de Classes (UML)
 

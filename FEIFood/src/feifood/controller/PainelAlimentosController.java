@@ -2,6 +2,7 @@ package feifood.controller;
 
 import feifood.model.Alimento;
 import feifood.model.Pedido;
+import feifood.model.Usuario;
 import feifood.view.AlimentoItemPanel;
 import java.awt.Dimension;
 import java.text.NumberFormat;
@@ -160,6 +161,16 @@ public class PainelAlimentosController
             painelDosAlimentos.get(i).getQuantidadeValorLabel().setText("0");
             painelDosAlimentos.get(i).getMinusButton().setEnabled(false);
         }
+    }
+    
+    public Integer getId()
+    {
+        return pedido.getId();
+    }
+    
+    public Usuario getUsuario()
+    {
+        return pedido.getUsuario();
     }
     
     public ArrayList<Alimento> getAlimentos()

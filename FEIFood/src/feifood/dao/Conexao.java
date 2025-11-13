@@ -9,8 +9,8 @@ import java.sql.SQLException;
  */
 public class Conexao
 {   
-    private static final String porta = "5433";
-    private static final String senha = "fei";
+    private static final String porta = "5432";
+    private static final String senha = "feifood";
     
     /**
      * Método estático que cria uma nova conexão ao banco de dados.

@@ -2,6 +2,7 @@ package feifood.controller;
 
 import feifood.view.MenuPrincipalFrame;
 import feifood.dao.AlimentoDao;
+import feifood.dao.PedidoDao;
 import feifood.model.Alimento;
 import feifood.model.Pedido;
 import feifood.model.Usuario;
@@ -67,10 +68,38 @@ public class MenuPrincipalController {
         telaPrincipal.getConfirmarPedidoButton().addActionListener(e -> {
             boolean pedidoValido = false;
             
-            for (var quantidade : painelAlimentos.getQuantidades())
+            var pedidoFinal = new Pedido(painelAlimentos.getId(),
+                                         painelAlimentos.getUsuario(),
+                                         new ArrayList<Alimento>(),
+                                         new ArrayList<Integer>());
+            
+            for (int i = 0; i < painelAlimentos.getQuantidades().size(); ++i)
             {
+                Alimento alimento = painelAlimentos.getAlimentos().get(i);
+                Integer quantidade = painelAlimentos.getQuantidades().get(i);
+                
                 if (quantidade != 0)
+                {
                     pedidoValido = true;
+                    
+                    pedidoFinal.getQuantidades().add(quantidade);
+                    pedidoFinal.getAlimentos().add(alimento);
+                }
+            }
+            
+            try
+            {
+                PedidoDao.inserir(pedidoFinal);
+            }
+            catch (SQLException e2)
+            {
+                JOptionPane.showMessageDialog(telaPrincipal,
+                                          "Um erro não permitiu que o pedido "
+                                          + "fosse salvo no banco de dados.\n"
+                                          + e2.getMessage(),
+                                          "Erro",
+                                          JOptionPane.ERROR_MESSAGE
+                );
             }
             
             if (!pedidoValido)

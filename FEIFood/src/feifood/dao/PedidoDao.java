@@ -138,7 +138,7 @@ public class PedidoDao
             }
 
             sql = """
-                  insert into pedido_alimento(pedido_id, alimento_id, quantidade_alimentos)
+                  insert into pedido_alimento(pedido_id, alimento_id, quantidade_alimento)
                   values (?, ?, ?);
                   """;
 

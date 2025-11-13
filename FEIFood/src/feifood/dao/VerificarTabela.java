@@ -11,7 +11,7 @@ import java.sql.ResultSet;
 public class VerificarTabela
 {
     /**
-     * Verifica se uma tabela está vazia
+     * Verifica se uma tabela está vazia.
      * 
      * @param nomeTabela nome da tabela a ser checada
      * @return <code>true<code> se estiver vazia, senão <code>false</code>

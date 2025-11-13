@@ -13,7 +13,7 @@ public class VerificarTabela
     /**
      * Verifica se uma tabela está vazia.
      * 
-     * @param nomeTabela nome da tabela a ser checada
+     * @param nomeTabela nome da tabela a ser checada.
      * @return <code>true<code> se estiver vazia, senão <code>false</code>
      */
     public static boolean verificarSeTabelaEstaVazia(String nomeTabela)

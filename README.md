@@ -23,6 +23,7 @@ Este programa tem como funcionalidade:
 Este projeto conta com uma pasta FEIFood que contém um projeto do NetBeans. Dentro dessa pasta, é possível encontrar:
 - FEIFood/src/feifood/: o código fonte do projeto.
 - FEIFood.jar: o arquivo .jar executável deste projeto.
+- Link para o video.txt: arquivo de texto contendo o link do vídeo do YouTube que demonstra o funcionamento do projeto.
 - javadoc.zip: o arquivo de documentação do projeto gerado pelo Javadoc (compactado).
 
 ## Diagrama de Classes (UML)
